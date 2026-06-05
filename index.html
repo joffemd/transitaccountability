@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fixes Before Funding | Stop the Bay Area Transit Sales Tax</title>
+  <meta name="description" content="The November 2026 regional transit sales tax would raise rates in five Bay Area counties for 14 years. Compare your city's sales tax, review transit's record, and see a simpler alternative." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%230e8a6b' stroke-width='4'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='30' font-family='Arial' font-weight='700' fill='%230f2740'%3ENO%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#0f2740; --blue:#1e5f8f; --teal:#0e8a6b; --gold:#f4b942;
+      --text:#17202c; --muted:#5c6775; --white:#fff;
+      --card:rgba(255,255,255,0.9); --border:rgba(15,39,64,0.12);
+      --shadow:0 18px 40px rgba(15,39,64,0.13);
+      --radius:22px; --max:1180px; --red:#b42318; --green:#0e8a6b;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; font-family:'Inter',system-ui,-apple-system,sans-serif; color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(14,138,107,0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(30,95,143,0.14), transparent 28%),
+        linear-gradient(180deg,#f6fbf9 0%,#eef5fb 44%,#ffffff 100%);
+      line-height:1.6;
+    }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(calc(100% - 2rem),var(--max)); margin:0 auto; }
+    .site-header { position:sticky; top:0; z-index:50; backdrop-filter:blur(12px); background:rgba(255,255,255,0.93); border-bottom:2px solid rgba(14,138,107,0.16); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.7rem 0; }
+    .brand { display:flex; align-items:center; gap:0.85rem; font-weight:800; color:var(--navy); }
+    .brand-badge { width:54px; height:54px; border-radius:15px; display:grid; place-items:center; background:linear-gradient(135deg,#0e8a6b,#0b6e55); color:#fff; box-shadow:0 10px 26px rgba(14,138,107,0.35); font-weight:900; font-size:1.5rem; font-family:'Merriweather',Georgia,serif; }
+    .brand-text { font-size:1.05rem; line-height:1.1; }
+    .brand small { display:block; color:var(--muted); font-size:0.74rem; font-weight:600; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:0.7rem; align-items:center; }
+    .nav-links a { color:var(--muted); font-weight:600; font-size:0.87rem; }
+    .nav-links a:hover { color:var(--navy); }
+    .nav-links a.active { color:var(--navy); }
+    .nav-links a.cta { color:#fff; background:linear-gradient(135deg,#b42318,#8f1a12); padding:0.6rem 1rem; border-radius:999px; box-shadow:0 8px 20px rgba(180,35,24,0.28); }
+    .hero { position:relative; overflow:hidden; padding:4rem 0 2.6rem; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:2rem; align-items:center; }
+    h1 { margin:1rem 0; font-family:'Merriweather',Georgia,serif; font-size:clamp(2.3rem,5vw,4.2rem); line-height:1.06; color:var(--navy); letter-spacing:-0.03em; }
+    .eyebrow { display:inline-block; font-size:0.78rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); background:rgba(14,138,107,0.1); border:1px solid rgba(14,138,107,0.2); padding:0.4rem 0.8rem; border-radius:999px; }
+    .hero p.lead { max-width:40rem; font-size:1.12rem; color:var(--muted); margin:0 0 1.4rem; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:0.9rem; margin-top:1.4rem; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:0.55rem; min-height:50px; padding:0.85rem 1.2rem; border-radius:999px; font-weight:700; border:0; cursor:pointer; transition:transform 0.2s ease,box-shadow 0.2s ease; font-family:inherit; font-size:1rem; }
+    .button:hover { transform:translateY(-1px); }
+    .button-primary { background:linear-gradient(135deg,var(--navy),var(--blue)); color:#fff; box-shadow:0 14px 28px rgba(30,95,143,0.25); }
+    .button-danger { background:linear-gradient(135deg,#b42318,#8f1a12); color:#fff; box-shadow:0 14px 28px rgba(180,35,24,0.28); }
+    .button-secondary { background:rgba(255,255,255,0.88); color:var(--navy); border:1px solid rgba(15,39,64,0.1); box-shadow:var(--shadow); }
+    .hero-art { border-radius:24px; overflow:hidden; background:linear-gradient(135deg,#0b2138,#13507f 58%,#0e8a6b 130%); padding:1.4rem; min-height:380px; display:flex; flex-direction:column; justify-content:space-between; color:#fff; box-shadow:var(--shadow); }
+    .hero-art h2 { margin:0; font-size:clamp(1.3rem,2.2vw,1.8rem); line-height:1.15; }
+    .hero-art p { margin-top:0.6rem; color:rgba(255,255,255,0.82); }
+    .ba-table { width:100%; border-collapse:collapse; margin-top:1rem; background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; }
+    .ba-table th, .ba-table td { padding:0.6rem 0.7rem; text-align:left; font-size:0.92rem; border-bottom:1px solid rgba(255,255,255,0.12); }
+    .ba-table th { color:rgba(255,255,255,0.7); font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; }
+    .ba-table td.now { color:rgba(255,255,255,0.92); font-weight:700; }
+    .ba-table td.aft { color:var(--gold); font-weight:800; }
+    .icon-row { display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin-top:1rem; }
+    .mini-stat { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.16); border-radius:18px; padding:0.85rem; }
+    .mini-stat strong { display:block; font-size:1.25rem; margin-bottom:0.1rem; }
+    .mini-stat span { font-size:0.85rem; color:rgba(255,255,255,0.8); }
+    section { padding:2.1rem 0; }
+    .section-title { margin-bottom:1.1rem; }
+    .section-title h2 { margin:0 0 0.35rem; font-family:'Merriweather',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.6rem); color:var(--navy); }
+    .section-title p { margin:0; color:var(--muted); max-width:46rem; }
+    .facts-grid, .tools-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.15rem; margin-top:1.2rem; }
+    .fact-card, .quote-card, .notice-card, .tool-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .fact-card, .tool-card { padding:1.35rem; }
+    .fact-number, .tool-icon { display:inline-grid; place-items:center; width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,#e3f5ef,#fff6de); color:var(--navy); font-weight:800; margin-bottom:0.85rem; }
+    .fact-card h3, .tool-card h3 { margin:0 0 0.5rem; font-size:1.13rem; color:var(--navy); line-height:1.22; }
+    .fact-card p, .tool-card p { margin:0; color:var(--muted); }
+    .lookup-card { padding:1.5rem; margin-top:1.2rem; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .lookup-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:1.25rem; align-items:start; }
+    .lookup-results { display:grid; grid-template-columns:repeat(2,1fr); gap:0.9rem; margin-top:0.4rem; }
+    .rate-box { padding:1.05rem; border-radius:18px; background:rgba(255,255,255,0.94); border:1px solid rgba(15,39,64,0.1); }
+    .rate-box.current { border-left:5px solid var(--blue); }
+    .rate-box.after { border-left:5px solid var(--red); }
+    .rate-box h4 { margin:0 0 0.3rem; font-size:0.92rem; color:var(--muted); }
+    .rate-box .rate { font-size:clamp(1.7rem,3vw,2.4rem); font-weight:800; color:var(--navy); line-height:1.05; }
+    .rate-box p { margin:0.4rem 0 0; color:var(--muted); font-size:0.9rem; }
+    .lookup-notes { color:var(--muted); font-size:0.92rem; margin-top:0.9rem; }
+    .data-table { width:100%; border-collapse:collapse; margin-top:1.2rem; background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
+    .data-table th, .data-table td { padding:0.8rem 0.9rem; text-align:left; border-bottom:1px solid var(--border); font-size:0.95rem; }
+    .data-table th { background:rgba(15,39,64,0.04); color:var(--navy); font-weight:800; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.04em; }
+    .data-table td.now { font-weight:700; color:var(--blue); }
+    .data-table td.aft { font-weight:800; color:var(--red); }
+    .data-table tr:last-child td { border-bottom:0; }
+    .data-table caption { caption-side:bottom; padding-top:0.7rem; color:var(--muted); font-size:0.85rem; text-align:left; }
+    .dark-section { background:linear-gradient(145deg,#0b1f37 0%,#143a63 100%); padding:3.2rem 0; position:relative; overflow:hidden; }
+    .dark-section::before { content:''; position:absolute; top:-80px; right:-80px; width:340px; height:340px; border-radius:50%; background:rgba(14,138,107,0.1); pointer-events:none; }
+    .dark-section .section-title h2 { color:#fff; }
+    .dark-section .section-title p { color:rgba(255,255,255,0.68); }
+    .cuts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.4rem; }
+    .cut-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.13); border-radius:22px; padding:1.5rem; }
+    .cut-num { font-size:2.6rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem; font-family:'Merriweather',Georgia,serif; }
+    .cut-card h3 { color:#fff; margin:0 0 0.55rem; font-size:1.05rem; line-height:1.3; }
+    .cut-card p { color:rgba(255,255,255,0.78); margin:0 0 0.6rem; font-size:0.93rem; }
+    .cut-card a.detail-link { color:var(--gold); font-weight:700; font-size:0.9rem; text-decoration:underline; text-underline-offset:3px; }
+    .prose { max-width:48rem; }
+    .prose p { color:var(--text); margin:0 0 1.1rem; font-size:1.04rem; }
+    .prose h3 { color:var(--navy); font-family:'Merriweather',Georgia,serif; margin:1.8rem 0 0.6rem; font-size:1.35rem; }
+    .prose a { color:var(--blue); font-weight:600; text-decoration:underline; text-underline-offset:2px; }
+    .callout { background:linear-gradient(145deg,rgba(14,138,107,0.1),rgba(30,95,143,0.08)); border:1px solid rgba(14,138,107,0.2); border-left:5px solid var(--teal); border-radius:16px; padding:1.2rem 1.3rem; margin:1.4rem 0; }
+    .callout strong { color:var(--navy); }
+    .quote-card { padding:1.5rem; background:linear-gradient(145deg,rgba(15,39,64,0.98),rgba(30,95,143,0.96)); color:#fff; }
+    .quote-card h3 { margin-top:0; font-size:1.2rem; }
+    .quote-card ul { margin:0.6rem 0 0; padding-left:1.1rem; }
+    .quote-card li { color:rgba(255,255,255,0.9); margin-bottom:0.5rem; }
+    .notice-card { padding:1.45rem; }
+    .notice-card h3 { margin-top:0; font-size:1.15rem; color:var(--navy); }
+    .notice-card ul { margin:0.7rem 0 0; padding-left:1.1rem; color:var(--muted); }
+    .notice-card li+li { margin-top:0.5rem; }
+    .split { display:grid; grid-template-columns:1fr 0.95fr; gap:1.25rem; align-items:start; margin-top:1.3rem; }
+    .footer { padding:2.2rem 0 3rem; color:var(--muted); }
+    .footer-card { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.1rem 1.2rem; background:rgba(255,255,255,0.8); border:1px solid rgba(15,39,64,0.08); border-radius:20px; box-shadow:var(--shadow); }
+    .disclaimer { font-size:0.9rem; color:var(--muted); }
+    .footer-legal { text-align:center; margin-top:0.6rem; font-size:0.78rem; color:var(--muted); }
+    @media (max-width:960px) {
+      .hero-grid,.facts-grid,.tools-grid,.lookup-grid,.lookup-results,.split,.cuts-grid { grid-template-columns:1fr; }
+      .hero { padding-top:2.6rem; }
+      .nav { align-items:flex-start; flex-direction:column; }
+      .footer-card { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width:640px) {
+      .nav-links { gap:0.5rem; }
+      .nav-links a { font-size:0.82rem; }
+      .icon-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">FF</span>
+        <span class="brand-text">Fixes Before Funding<small>Stop the Bay Area Transit Sales Tax</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#cost">Cost of Living</a>
+        <a href="index.html#tax">The Tax</a>
+        <a href="transit-failures.html">Transit's Record</a>
+        <a href="salaries.html">Who Gets Paid</a>
+        <a href="better-way.html">A Better Way</a>
+        <a class="cta" href="index.html#act">Take Action</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">November 2026 &middot; Five Counties</span>
+        <h1>A higher sales tax, locked in for 14 years.</h1>
+        <p class="lead">This November, voters in Alameda, Contra Costa, San Francisco, San Mateo, and Santa Clara counties will be asked to raise the sales tax to bail out Bay Area transit. The increase is half a cent in four counties and a full cent in San Francisco, and it runs for fourteen years. Before we lock in roughly a billion dollars a year, the agencies should fix what is broken.</p>
+        <div class="hero-actions">
+          <a class="button button-danger" href="#cost">See your city's new rate</a>
+          <a class="button button-secondary" href="better-way.html">A simpler alternative</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div>
+          <h2>What it does to your sales tax</h2>
+          <p>The biggest cities, before and after the transit tax:</p>
+          <table class="ba-table">
+            <tr><th>City</th><th>Now</th><th>After</th></tr>
+            <tr><td>Hayward</td><td class="now">10.75%</td><td class="aft">11.25%</td></tr>
+            <tr><td>Oakland</td><td class="now">10.75%</td><td class="aft">11.25%</td></tr>
+            <tr><td>Berkeley</td><td class="now">10.25%</td><td class="aft">10.75%</td></tr>
+            <tr><td>Fremont</td><td class="now">10.25%</td><td class="aft">10.75%</td></tr>
+            <tr><td>San Jose</td><td class="now">10.00%</td><td class="aft">10.50%</td></tr>
+            <tr><td>San Francisco</td><td class="now">8.625%</td><td class="aft">9.625%</td></tr>
+          </table>
+        </div>
+        <div class="icon-row">
+          <div class="mini-stat"><strong>+0.5%</strong><span>Four counties (1% in SF)</span></div>
+          <div class="mini-stat"><strong>~$1B</strong><span>Per year</span></div>
+          <div class="mini-stat"><strong>14 yrs</strong><span>Locked in</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cost">
+    <div class="container">
+      <div class="section-title">
+        <h2>The cost-of-living hit comes first</h2>
+        <p>The Bay Area already carries some of the highest sales taxes in California. Sales tax is regressive: it falls hardest on working families, renters, and anyone living paycheck to paycheck, because it taxes what you spend rather than what you earn. It applies to cars, appliances, restaurant meals, and even gasoline. This measure would push seven Alameda County cities past 11 percent.</p>
+      </div>
+      <table class="data-table">
+        <caption>Combined sales-tax rates today versus after the November 2026 transit tax. The increase is 0.5 percentage points in Alameda, Contra Costa, San Mateo, and Santa Clara counties, and 1.0 point in San Francisco. Current rates from the <a href="https://www.cdtfa.ca.gov/taxes-and-fees/rates.aspx">California Department of Tax and Fee Administration</a>; Santa Clara County figures include the Measure A increase effective April 1, 2026.</caption>
+        <thead><tr><th>City</th><th>Current rate</th><th>After the transit tax</th></tr></thead>
+        <tbody>
+          <tr><td>Hayward</td><td class="now">10.750%</td><td class="aft">11.250%</td></tr>
+          <tr><td>Oakland</td><td class="now">10.750%</td><td class="aft">11.250%</td></tr>
+          <tr><td>Berkeley</td><td class="now">10.250%</td><td class="aft">10.750%</td></tr>
+          <tr><td>Fremont</td><td class="now">10.250%</td><td class="aft">10.750%</td></tr>
+          <tr><td>San Jose</td><td class="now">10.000%</td><td class="aft">10.500%</td></tr>
+          <tr><td>San Francisco</td><td class="now">8.625%</td><td class="aft">9.625%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="lookup-card">
+        <div class="lookup-grid">
+          <div>
+            <label for="citySelect">Look up any city or area in the five counties</label>
+            <select id="citySelect" aria-describedby="lookupHelp"><option value="">Select a city or area</option></select>
+            <div id="lookupHelp" class="lookup-notes">Choose your community to compare today's rate with the rate if the transit tax passes. The increase is half a cent in Alameda, Contra Costa, San Mateo, and Santa Clara counties, and a full cent in San Francisco.</div>
+            <div class="lookup-notes" id="placeNote" style="margin-top:0.8rem;">Pick a location to see the comparison.</div>
+          </div>
+          <div class="lookup-results">
+            <div class="rate-box current"><h4>Your rate today</h4><div class="rate" id="curRate">&mdash;</div><p>Current combined rate</p></div>
+            <div class="rate-box after"><h4>If the tax passes</h4><div class="rate" id="aftRate">&mdash;</div><p>With the transit tax added</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tax">
+    <div class="container">
+      <div class="section-title">
+        <h2>What the measure actually does</h2>
+        <p>The tax was authorized by <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB63">SB 63 (Wiener, 2025)</a>, which lets a new Metropolitan Transportation Commission body, the Public Transit Revenue Measure District, place a 14-year sales tax before voters in five counties. The four northern counties, Marin, Napa, Solano, and Sonoma, opted out.</p>
+      </div>
+      <div class="facts-grid">
+        <article class="fact-card"><div class="fact-number">1</div><h3>Roughly $1 billion a year, for 14 years</h3><p>MTC projects about $1.05 billion annually based on 2027 to 2031 taxable sales. Over the full term that is more than $14 billion locked in, regardless of how transit performs.</p></article>
+        <article class="fact-card"><div class="fact-number">2</div><h3>It locks in a model that may be obsolete</h3><p>Fourteen years is a long time. Driverless trains and buses, services like Waymo, and the permanent shift to remote and hybrid work are already reshaping how the Bay Area moves. This tax commits taxpayers to today's cost structure long after it stops making sense.</p></article>
+        <article class="fact-card"><div class="fact-number">3</div><h3>Not enough to fix transit anyway</h3><p>A billion a year does not close the gap. The region's top transit agencies already received about $5.1 billion in subsidies in 2024, and Plan Bay Area 2050+ seeks roughly $500 billion in transit funding over 25 years. This tax papers over the problem without fixing it.</p></article>
+        <article class="fact-card"><div class="fact-number">4</div><h3>A simple-majority workaround</h3><p>Rather than place the measure on the ballot itself, which would require a two-thirds vote to pass, the district chose a citizens' initiative gathering signatures across five counties, which can pass with a simple majority.</p></article>
+        <article class="fact-card"><div class="fact-number">5</div><h3>Your county does not get its money back</h3><p>Under the SB 63 formulas, no county's residents get all of their tax dollars spent in their own county. Much of the money flows to the largest and most troubled operators.</p></article>
+        <article class="fact-card"><div class="fact-number">6</div><h3>Fixes were promised, with no teeth</h3><p>SB 63 includes language about reviews, reports, and oversight, but none of it is binding. The agencies can continue business as usual while collecting the money.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>The agencies have not earned another tax</h2>
+        <p>Costs have soared, ridership has not recovered, and the region's signature projects have run badly over budget. The full record is on the next page.</p>
+      </div>
+      <div class="cuts-grid">
+        <div class="cut-card"><div class="cut-num">+257%</div><h3>BART operating subsidies, FY19 to FY26</h3><p>BART's operating subsidy jumped from $191 million to $682 million while operating costs rose 50 percent, even as service was cut.</p><a class="detail-link" href="transit-failures.html">See the full record &rarr;</a></div>
+        <div class="cut-card"><div class="cut-num">507%</div><h3>Cost per passenger trip</h3><p>The inflation-adjusted cost of carrying one rider one trip averaged 507 percent of its 1980 level over 2020 to 2024, after peaking at 888 percent in 2021.</p><a class="detail-link" href="transit-failures.html">See the data &rarr;</a></div>
+        <div class="cut-card"><div class="cut-num">~70%</div><h3>Ridership recovery</h3><p>Regional ridership sat near 500 million trips a year from 1980 to 2019 while population grew 51 percent. It fell 75 percent in the pandemic and has recovered only to about 70 percent.</p><a class="detail-link" href="transit-failures.html">See the trend &rarr;</a></div>
+        <div class="cut-card"><div class="cut-num">$556K</div><h3>Top transit pay</h3><p>AC Transit's general manager collected $556,045 in pay and benefits in 2022, then kept full pay through September 2025 in an advisory role with no defined duties.</p><a class="detail-link" href="salaries.html">See who gets paid &rarr;</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>There is a simpler answer than yes</h2>
+        <p>Voting no does not shut down transit. It forces the state and the agencies to do what they should have done already: pay for service out of the money they are pouring into capital megaprojects, and bring back a leaner plan in 2028.</p>
+      </div>
+      <div class="split">
+        <div class="quote-card">
+          <h3>If we vote no, the money already exists</h3>
+          <ul>
+            <li>The state spends roughly a billion dollars a year of cap-and-invest funds on high-speed rail that will not serve the Central Valley until the 2030s. Some of it can go to local transit operations now.</li>
+            <li>Pausing the two biggest Bay Area capital projects, BART's Silicon Valley Phase II extension to downtown San Jose and the Portal, Caltrain's downtown extension to the Salesforce Transit Center, frees committed state and local dollars for operations.</li>
+            <li>That buys time for planners to design a smaller, smarter measure for 2028 that places less burden on taxpayers.</li>
+          </ul>
+        </div>
+        <div class="notice-card">
+          <h3>Questions voters should ask first</h3>
+          <ul>
+            <li>Why lock in a 14-year tax when automation and remote work are about to reshape transit demand?</li>
+            <li>Why not redirect high-speed rail and megaproject funding to operations before raising the sales tax?</li>
+            <li>Why has there been no binding commitment to merge agencies, cut administrative overhead, or rein in compensation?</li>
+            <li>Why should the highest-sales-tax region in California raise rates again, to over 11 percent in some cities?</li>
+          </ul>
+          <p style="margin-top:1rem;"><a class="button button-secondary" href="better-way.html">Read the full alternative</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="act">
+    <div class="container">
+      <div class="section-title">
+        <h2>Take action</h2>
+        <p>We are organizing the opposition across all five counties and we need help.</p>
+      </div>
+      <div class="facts-grid">
+        <article class="fact-card"><div class="tool-icon">&#9998;</div><h3>File a ballot argument</h3><p>Help draft and sign official ballot arguments against the measure within each county's filing window.</p></article>
+        <article class="fact-card"><div class="tool-icon">&#128240;</div><h3>Write op-eds and letters</h3><p>Submit opinion pieces and letters to the editor in local outlets across the five counties.</p></article>
+        <article class="fact-card"><div class="tool-icon">&#128172;</div><h3>Present and share</h3><p>Bring the facts to civic, professional, and neighborhood meetings, and share new research with the group.</p></article>
+      </div>
+      <div class="callout" style="margin-top:1.5rem;">
+        <strong>Get involved:</strong> To file an argument, contribute research, or volunteer, contact the campaign at <a href="mailto:info@transitaccountability.com">info@transitaccountability.com</a>.
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var TAX=[
+  {c:"Alameda",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"Albany",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"Antioch",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"Atherton",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Belmont",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Berkeley",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"Brentwood",k:"Contra Costa",cur:8.750,aft:9.250},
+  {c:"Brisbane",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Burlingame",k:"San Mateo",cur:9.625,aft:10.125},
+  {c:"Campbell",k:"Santa Clara",cur:10.500,aft:11.000},
+  {c:"Clayton",k:"Contra Costa",cur:8.750,aft:9.250},
+  {c:"Colma",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Concord",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"Cupertino",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Daly City",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Danville",k:"Contra Costa",cur:8.750,aft:9.250},
+  {c:"Dublin",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"East Palo Alto",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"El Cerrito",k:"Contra Costa",cur:10.250,aft:10.750},
+  {c:"Emeryville",k:"Alameda",cur:10.500,aft:11.000},
+  {c:"Foster City",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Fremont",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"Gilroy",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Half Moon Bay",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Hayward",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"Hercules",k:"Contra Costa",cur:9.250,aft:9.750},
+  {c:"Hillsborough",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Lafayette",k:"Contra Costa",cur:9.250,aft:9.750},
+  {c:"Livermore",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"Los Altos",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Los Altos Hills",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Los Gatos",k:"Santa Clara",cur:9.875,aft:10.375},
+  {c:"Martinez",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"Menlo Park",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Millbrae",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Milpitas",k:"Santa Clara",cur:10.000,aft:10.500},
+  {c:"Monte Sereno",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Moraga",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"Morgan Hill",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Mountain View",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Newark",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"Oakland",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"Oakley",k:"Contra Costa",cur:8.750,aft:9.250},
+  {c:"Orinda",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"Pacifica",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Palo Alto",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Piedmont",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"Pinole",k:"Contra Costa",cur:10.250,aft:10.750},
+  {c:"Pittsburg",k:"Contra Costa",cur:9.250,aft:9.750},
+  {c:"Pleasant Hill",k:"Contra Costa",cur:9.250,aft:9.750},
+  {c:"Pleasanton",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"Portola Valley",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Redwood City",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Richmond",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"San Bruno",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"San Carlos",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"San Francisco",k:"San Francisco",cur:8.625,aft:9.625},
+  {c:"San Jose",k:"Santa Clara",cur:10.000,aft:10.500},
+  {c:"San Leandro",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"San Mateo",k:"San Mateo",cur:9.625,aft:10.125},
+  {c:"San Pablo",k:"Contra Costa",cur:9.500,aft:10.000},
+  {c:"San Ramon",k:"Contra Costa",cur:9.750,aft:10.250},
+  {c:"Santa Clara",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Saratoga",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"South San Francisco",k:"San Mateo",cur:9.875,aft:10.375},
+  {c:"Sunnyvale",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Unincorporated Alameda County",k:"Alameda",cur:10.250,aft:10.750},
+  {c:"Unincorporated Contra Costa County",k:"Contra Costa",cur:8.750,aft:9.250},
+  {c:"Unincorporated San Mateo County",k:"San Mateo",cur:9.375,aft:9.875},
+  {c:"Unincorporated Santa Clara County",k:"Santa Clara",cur:9.750,aft:10.250},
+  {c:"Union City",k:"Alameda",cur:10.750,aft:11.250},
+  {c:"Walnut Creek",k:"Contra Costa",cur:9.250,aft:9.750},
+  {c:"Woodside",k:"San Mateo",cur:9.375,aft:9.875}
+];
+    var sel=document.getElementById('citySelect');
+    var cur=document.getElementById('curRate'), aft=document.getElementById('aftRate'), note=document.getElementById('placeNote');
+    function fmt(v){return v.toFixed(3)+'%';}
+    TAX.slice().sort(function(a,b){return a.c.localeCompare(b.c);}).forEach(function(r){
+      var o=document.createElement('option'); o.value=r.c; o.textContent=r.c+'  ('+r.k+')'; sel.appendChild(o);
+    });
+    sel.addEventListener('change',function(){
+      var rec=TAX.filter(function(r){return r.c===sel.value;})[0];
+      if(!rec){cur.innerHTML=aft.innerHTML='&mdash;'; note.textContent='Pick a location to see the comparison.'; return;}
+      cur.textContent=fmt(rec.cur); aft.textContent=fmt(rec.aft);
+      var delta=(rec.aft-rec.cur).toFixed(3);
+      note.innerHTML='<strong>'+rec.c+'</strong> ('+rec.k+' County): today '+fmt(rec.cur)+', and '+fmt(rec.aft)+' if the transit tax passes, an increase of '+delta+' points.';
+    });
+  })();
+  </script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div class="disclaimer"><strong>Fixes Before Funding.</strong> A public-information project opposing the November 2026 regional transit sales tax. Figures are drawn from public records and primary sources, which are linked throughout.</div>
+      </div>
+      <!-- TODO (Marc): replace the line below with the proper FPPC committee disclaimer / committee ID before publishing. -->
+      <div class="footer-legal">Paid for by SHIFT Bay Area. Not authorized by any candidate or committee controlled by a candidate.</div>
+    </div>
+  </footer>
+</body>
+</html>
