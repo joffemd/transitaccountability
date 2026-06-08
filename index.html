@@ -190,20 +190,6 @@
         <h2>The cost-of-living hit comes first</h2>
         <p>The Bay Area already carries some of the highest sales taxes in California. Sales tax is regressive: it falls hardest on working families, renters, and anyone living paycheck to paycheck, because it taxes what you spend rather than what you earn. It applies to cars, appliances, restaurant meals, and even gasoline. This measure would push seven Alameda County cities past 11 percent.</p>
       </div>
-      <table class="data-table">
-        <caption>Combined sales-tax rates today versus after the November 2026 transit tax. The increase is 0.5 percentage points in Alameda, Contra Costa, San Mateo, and Santa Clara counties, and 1.0 point in San Francisco. Current rates from the <a href="https://www.cdtfa.ca.gov/taxes-and-fees/rates.aspx">California Department of Tax and Fee Administration</a>; Santa Clara County figures include the Measure A increase effective April 1, 2026.</caption>
-        <thead><tr><th>City</th><th>Current rate</th><th>After the transit tax</th></tr></thead>
-        <tbody>
-          <tr><td>Hayward</td><td class="now">10.750%</td><td class="aft">11.250%</td></tr>
-          <tr><td>Oakland</td><td class="now">10.750%</td><td class="aft">11.250%</td></tr>
-          <tr><td>Berkeley</td><td class="now">10.250%</td><td class="aft">10.750%</td></tr>
-          <tr><td>Fremont</td><td class="now">10.250%</td><td class="aft">10.750%</td></tr>
-          <tr><td>San Jose</td><td class="now">10.000%</td><td class="aft">10.500%</td></tr>
-          <tr><td>Richmond</td><td class="now">9.750%</td><td class="aft">10.250%</td></tr>
-          <tr><td>San Francisco</td><td class="now">8.625%</td><td class="aft">9.625%</td></tr>
-        </tbody>
-      </table>
-
       <div class="lookup-card">
         <div class="lookup-grid">
           <div>
@@ -256,7 +242,7 @@
   <section id="already">
     <div class="container">
       <div class="section-title">
-        <h2>Transit already gets about $6 billion a year</h2>
+        <h2>Transit already gets $6.2 billion a year from taxes &amp; tolls</h2>
         <p>Before the region asks for another billion dollars a year, look at what it already collects. In fiscal year 2024-25, the Bay Area's transit operators took in roughly $6 billion in tax, toll, and government grant support across the five counties, on top of the fares, parking, and advertising revenue they also keep.</p>
       </div>
 
@@ -330,9 +316,52 @@
         <article class="fact-card"><div class="tool-icon">&#128240;</div><h3>Write op-eds and letters</h3><p>Submit opinion pieces and letters to the editor in local outlets across the five counties.</p></article>
         <article class="fact-card"><div class="tool-icon">&#128172;</div><h3>Present and share</h3><p>Bring the facts to civic, professional, and neighborhood meetings, and share new research with the group.</p></article>
       </div>
-      <div class="callout" style="margin-top:1.5rem;">
-        <strong>Get involved:</strong> To reserve a lawn sign, contribute research, or volunteer, contact the campaign at <a href="mailto:info@cocotax.org">info@cocotax.org</a>.
+      <style>
+        .vform label { display:block; font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.9rem; }
+        .vform .vrow { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+        .vform input, .vform select, .vform textarea { display:block; width:100%; margin-top:0.35rem; padding:0.7rem 0.8rem; border:1px solid var(--border); border-radius:12px; font-family:inherit; font-size:1rem; font-weight:500; color:var(--navy); background:#fff; box-sizing:border-box; }
+        .vform textarea { resize:vertical; }
+        @media (max-width:720px){ .vform .vrow { grid-template-columns:1fr; } }
+      </style>
+      <div class="lookup-card" style="margin-top:1.5rem;max-width:48rem;">
+        <h3 style="margin:0 0 0.3rem;font-size:1.3rem;color:var(--navy);">Join the campaign</h3>
+        <p style="margin:0 0 1.1rem;color:var(--muted);">To reserve a lawn sign, contribute research, or volunteer across the five counties, sign up here and we will be in touch.</p>
+        <div class="vform">
+          <div class="vrow">
+            <label>Full name<input type="text" id="vfName" placeholder="Your name" autocomplete="name"></label>
+            <label>Email<input type="email" id="vfEmail" placeholder="you@example.com" autocomplete="email"></label>
+          </div>
+          <div class="vrow">
+            <label>City<input type="text" id="vfCity" placeholder="Your city or town"></label>
+            <label>How would you like to help?
+              <select id="vfHelp">
+                <option value="Reserve a lawn sign">Reserve a lawn sign</option>
+                <option value="Research">Research</option>
+                <option value="Write op-eds and letters">Write op-eds and letters</option>
+                <option value="Social media posting">Social media posting</option>
+                <option value="Present or host a meeting">Present or host a meeting</option>
+                <option value="General volunteer">General volunteer</option>
+              </select>
+            </label>
+          </div>
+          <label>Message<textarea id="vfMsg" rows="3" placeholder="Anything you'd like us to know (optional)"></textarea></label>
+          <button type="button" class="button button-danger" onclick="submitVolunteer()" style="margin-top:0.3rem;">Send volunteer signup</button>
+          <p class="lookup-notes" id="vfNote" style="margin-top:0.85rem;">Form not opening? Email us directly at <a href="mailto:info@cocotax.org">info@cocotax.org</a>.</p>
+        </div>
       </div>
+      <script>
+        function submitVolunteer(){
+          var g=function(id){return (document.getElementById(id).value||'').trim();};
+          var name=g('vfName'), email=g('vfEmail'), city=g('vfCity'), msg=g('vfMsg');
+          var help=document.getElementById('vfHelp').value;
+          var note=document.getElementById('vfNote');
+          if(!name||!email){ note.innerHTML='Please add your name and email, then try again. Or email us directly at <a href="mailto:info@cocotax.org">info@cocotax.org</a>.'; return; }
+          var subject='Transit Tax volunteer signup: '+name;
+          var body='Name: '+name+'\nEmail: '+email+'\nCity: '+city+'\nHow they want to help: '+help+'\n\nMessage:\n'+msg;
+          window.location.href='mailto:info@cocotax.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+          note.innerHTML='Thanks, '+name.replace(/[<>]/g,'')+'! Your email app should open with your signup ready to send. If it does not, email us at <a href="mailto:info@cocotax.org">info@cocotax.org</a>.';
+        }
+      </script>
     </div>
   </section>
 
