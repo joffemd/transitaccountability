@@ -5,156 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A Better Way | Fixes Before Funding</title>
   <meta name="description" content="Vote no and fund transit operations by redirecting high-speed rail and megaproject funds, then bring back a leaner measure in 2028." />
+  <meta name="theme-color" content="#0f2740" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%230e8a6b' stroke-width='4'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='30' font-family='Arial' font-weight='700' fill='%230f2740'%3ENO%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:#0f2740; --blue:#1e5f8f; --teal:#0e8a6b; --gold:#f4b942;
-      --text:#17202c; --muted:#5c6775; --white:#fff;
-      --card:rgba(255,255,255,0.9); --border:rgba(15,39,64,0.12);
-      --shadow:0 18px 40px rgba(15,39,64,0.13);
-      --radius:22px; --max:1180px; --red:#b42318; --green:#0e8a6b;
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      margin:0; font-family:'Inter',system-ui,-apple-system,sans-serif; color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(14,138,107,0.16), transparent 30%),
-        radial-gradient(circle at top right, rgba(30,95,143,0.14), transparent 28%),
-        linear-gradient(180deg,#f6fbf9 0%,#eef5fb 44%,#ffffff 100%);
-      line-height:1.6;
-    }
-    a { color:inherit; text-decoration:none; }
-    .container { width:min(calc(100% - 2rem),var(--max)); margin:0 auto; }
-    .site-header { position:sticky; top:0; z-index:50; backdrop-filter:blur(12px); background:rgba(255,255,255,0.93); border-bottom:2px solid rgba(14,138,107,0.16); }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.7rem 0; }
-    .brand { display:flex; align-items:center; gap:0.85rem; font-weight:800; color:var(--navy); }
-    .brand-badge { width:54px; height:54px; border-radius:15px; display:grid; place-items:center; background:linear-gradient(135deg,#0e8a6b,#0b6e55); color:#fff; box-shadow:0 10px 26px rgba(14,138,107,0.35); font-weight:900; font-size:1.5rem; font-family:'Merriweather',Georgia,serif; }
-    .brand-text { font-size:1.05rem; line-height:1.1; }
-    .brand small { display:block; color:var(--muted); font-size:0.74rem; font-weight:600; }
-    .nav-links { display:flex; flex-wrap:wrap; gap:0.7rem; align-items:center; }
-    .nav-links a { color:var(--muted); font-weight:600; font-size:0.87rem; }
-    .nav-links a:hover { color:var(--navy); }
-    .nav-links a.active { color:var(--navy); }
-    .nav-links a.cta { color:#fff; background:linear-gradient(135deg,#b42318,#8f1a12); padding:0.6rem 1rem; border-radius:999px; box-shadow:0 8px 20px rgba(180,35,24,0.28); }
-    .hero { position:relative; overflow:hidden; padding:4rem 0 2.6rem; }
-    .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:2rem; align-items:center; }
-    h1 { margin:1rem 0; font-family:'Merriweather',Georgia,serif; font-size:clamp(2.3rem,5vw,4.2rem); line-height:1.06; color:var(--navy); letter-spacing:-0.03em; }
-    .eyebrow { display:inline-block; font-size:0.78rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); background:rgba(14,138,107,0.1); border:1px solid rgba(14,138,107,0.2); padding:0.4rem 0.8rem; border-radius:999px; }
-    .hero p.lead { max-width:40rem; font-size:1.12rem; color:var(--muted); margin:0 0 1.4rem; }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:0.9rem; margin-top:1.4rem; }
-    .button { display:inline-flex; align-items:center; justify-content:center; gap:0.55rem; min-height:50px; padding:0.85rem 1.2rem; border-radius:999px; font-weight:700; border:0; cursor:pointer; transition:transform 0.2s ease,box-shadow 0.2s ease; font-family:inherit; font-size:1rem; }
-    .button:hover { transform:translateY(-1px); }
-    .button-primary { background:linear-gradient(135deg,var(--navy),var(--blue)); color:#fff; box-shadow:0 14px 28px rgba(30,95,143,0.25); }
-    .button-danger { background:linear-gradient(135deg,#b42318,#8f1a12); color:#fff; box-shadow:0 14px 28px rgba(180,35,24,0.28); }
-    .button-secondary { background:rgba(255,255,255,0.88); color:var(--navy); border:1px solid rgba(15,39,64,0.1); box-shadow:var(--shadow); }
-    .hero-art { border-radius:24px; overflow:hidden; background:linear-gradient(135deg,#0b2138,#13507f 58%,#0e8a6b 130%); padding:1.4rem; min-height:380px; display:flex; flex-direction:column; justify-content:space-between; color:#fff; box-shadow:var(--shadow); }
-    .hero-art h2 { margin:0; font-size:clamp(1.3rem,2.2vw,1.8rem); line-height:1.15; }
-    .hero-art p { margin-top:0.6rem; color:rgba(255,255,255,0.82); }
-    .ba-table { width:100%; border-collapse:collapse; margin-top:1rem; background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; }
-    .ba-table th, .ba-table td { padding:0.6rem 0.7rem; text-align:left; font-size:0.92rem; border-bottom:1px solid rgba(255,255,255,0.12); }
-    .ba-table th { color:rgba(255,255,255,0.7); font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; }
-    .ba-table td.now { color:rgba(255,255,255,0.92); font-weight:700; }
-    .ba-table td.aft { color:var(--gold); font-weight:800; }
-    .icon-row { display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin-top:1rem; }
-    .mini-stat { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.16); border-radius:18px; padding:0.85rem; }
-    .mini-stat strong { display:block; font-size:1.25rem; margin-bottom:0.1rem; }
-    .mini-stat span { font-size:0.85rem; color:rgba(255,255,255,0.8); }
-    section { padding:2.1rem 0; }
-    .section-title { margin-bottom:1.1rem; }
-    .section-title h2 { margin:0 0 0.35rem; font-family:'Merriweather',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.6rem); color:var(--navy); }
-    .section-title p { margin:0; color:var(--muted); max-width:46rem; }
-    .facts-grid, .tools-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.15rem; margin-top:1.2rem; }
-    .fact-card, .quote-card, .notice-card, .tool-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); }
-    .fact-card, .tool-card { padding:1.35rem; }
-    .fact-number, .tool-icon { display:inline-grid; place-items:center; width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,#e3f5ef,#fff6de); color:var(--navy); font-weight:800; margin-bottom:0.85rem; }
-    .fact-card h3, .tool-card h3 { margin:0 0 0.5rem; font-size:1.13rem; color:var(--navy); line-height:1.22; }
-    .fact-card p, .tool-card p { margin:0; color:var(--muted); }
-    .lookup-card { padding:1.5rem; margin-top:1.2rem; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); }
-    .lookup-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:1.25rem; align-items:start; }
-    .lookup-results { display:grid; grid-template-columns:repeat(2,1fr); gap:0.9rem; margin-top:0.4rem; }
-    .rate-box { padding:1.05rem; border-radius:18px; background:rgba(255,255,255,0.94); border:1px solid rgba(15,39,64,0.1); }
-    .rate-box.current { border-left:5px solid var(--blue); }
-    .rate-box.after { border-left:5px solid var(--red); }
-    .rate-box h4 { margin:0 0 0.3rem; font-size:0.92rem; color:var(--muted); }
-    .rate-box .rate { font-size:clamp(1.7rem,3vw,2.4rem); font-weight:800; color:var(--navy); line-height:1.05; }
-    .rate-box p { margin:0.4rem 0 0; color:var(--muted); font-size:0.9rem; }
-    .lookup-notes { color:var(--muted); font-size:0.92rem; margin-top:0.9rem; }
-    .data-table { width:100%; border-collapse:collapse; margin-top:1.2rem; background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); }
-    .data-table th, .data-table td { padding:0.8rem 0.9rem; text-align:left; border-bottom:1px solid var(--border); font-size:0.95rem; }
-    .data-table th { background:rgba(15,39,64,0.04); color:var(--navy); font-weight:800; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.04em; }
-    .data-table td.now { font-weight:700; color:var(--blue); }
-    .data-table td.aft { font-weight:800; color:var(--red); }
-    .data-table tr:last-child td { border-bottom:0; }
-    .data-table caption { caption-side:bottom; padding-top:0.7rem; color:var(--muted); font-size:0.85rem; text-align:left; }
-    .dark-section { background:linear-gradient(145deg,#0b1f37 0%,#143a63 100%); padding:3.2rem 0; position:relative; overflow:hidden; }
-    .dark-section::before { content:''; position:absolute; top:-80px; right:-80px; width:340px; height:340px; border-radius:50%; background:rgba(14,138,107,0.1); pointer-events:none; }
-    .dark-section .section-title h2 { color:#fff; }
-    .dark-section .section-title p { color:rgba(255,255,255,0.68); }
-    .cuts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.4rem; }
-    .cut-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.13); border-radius:22px; padding:1.5rem; }
-    .cut-num { font-size:2.6rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:0.5rem; font-family:'Merriweather',Georgia,serif; }
-    .cut-card h3 { color:#fff; margin:0 0 0.55rem; font-size:1.05rem; line-height:1.3; }
-    .cut-card p { color:rgba(255,255,255,0.78); margin:0 0 0.6rem; font-size:0.93rem; }
-    .cut-card a.detail-link { color:var(--gold); font-weight:700; font-size:0.9rem; text-decoration:underline; text-underline-offset:3px; }
-    .prose { max-width:48rem; }
-    .prose p { color:var(--text); margin:0 0 1.1rem; font-size:1.04rem; }
-    .prose h3 { color:var(--navy); font-family:'Merriweather',Georgia,serif; margin:1.8rem 0 0.6rem; font-size:1.35rem; }
-    .prose a { color:var(--blue); font-weight:600; text-decoration:underline; text-underline-offset:2px; }
-    .callout { background:linear-gradient(145deg,rgba(14,138,107,0.1),rgba(30,95,143,0.08)); border:1px solid rgba(14,138,107,0.2); border-left:5px solid var(--teal); border-radius:16px; padding:1.2rem 1.3rem; margin:1.4rem 0; }
-    .callout strong { color:var(--navy); }
-    .quote-card { padding:1.5rem; background:linear-gradient(145deg,rgba(15,39,64,0.98),rgba(30,95,143,0.96)); color:#fff; }
-    .quote-card h3 { margin-top:0; font-size:1.2rem; }
-    .quote-card ul { margin:0.6rem 0 0; padding-left:1.1rem; }
-    .quote-card li { color:rgba(255,255,255,0.9); margin-bottom:0.5rem; }
-    .notice-card { padding:1.45rem; }
-    .notice-card h3 { margin-top:0; font-size:1.15rem; color:var(--navy); }
-    .notice-card ul { margin:0.7rem 0 0; padding-left:1.1rem; color:var(--muted); }
-    .notice-card li+li { margin-top:0.5rem; }
-    .split { display:grid; grid-template-columns:1fr 0.95fr; gap:1.25rem; align-items:start; margin-top:1.3rem; }
-    .footer { padding:2.2rem 0 3rem; color:var(--muted); }
-    .footer-card { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.1rem 1.2rem; background:rgba(255,255,255,0.8); border:1px solid rgba(15,39,64,0.08); border-radius:20px; box-shadow:var(--shadow); }
-    .disclaimer { font-size:0.9rem; color:var(--muted); }
-    .footer-legal { text-align:center; margin-top:0.6rem; font-size:0.78rem; color:var(--muted); }
-    @media (max-width:960px) {
-      .hero-grid,.facts-grid,.tools-grid,.lookup-grid,.lookup-results,.split,.cuts-grid { grid-template-columns:1fr; }
-      .hero { padding-top:2.6rem; }
-      .nav { align-items:flex-start; flex-direction:column; }
-      .footer-card { flex-direction:column; align-items:flex-start; }
-    }
-    @media (max-width:640px) {
-      .nav-links { gap:0.5rem; }
-      .nav-links a { font-size:0.82rem; }
-      .icon-row { grid-template-columns:1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>  <header class="site-header">
+<body>
+  <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html">
         <span class="brand-badge">FF</span>
         <span class="brand-text">Fixes Before Funding<small>Stop the Bay Area Transit Sales Tax</small></span>
       </a>
-      <nav class="nav-links">
-        <a href="index.html#cost">Cost of Living</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="primary-nav">
+        <a href="index.html#cost">Your Rate</a>
         <a href="index.html#tax">The Tax</a>
         <a href="regressive-tax.html">Who Pays Most</a>
         <a href="transit-failures.html">Transit's Record</a>
         <a href="salaries.html">Who Gets Paid</a>
-        <a href="yes-funding.html">Who's Funding It</a>        <a href="better-way.html" class="active">A Better Way</a>
-        <a class="cta" href="index.html#act">Take Action</a>
-        <a class="cta donate" href="https://buy.stripe.com/8x200jffV9v42vm6lw3VC01" target="_blank" rel="noopener" style="color:#fff;background:linear-gradient(135deg,#0e8a6b,#0b6e55);padding:0.6rem 1rem;border-radius:999px;box-shadow:0 8px 20px rgba(14,138,107,0.28);font-weight:700;">Donate</a>
+        <a href="yes-funding.html">Who's Funding It</a>
+        <a href="better-way.html" class="active">A Better Way</a>
+        <span class="nav-cta-group">
+          <a class="cta cta-outline" href="index.html#act">Take Action</a>
+          <a class="cta cta-donate" href="https://buy.stripe.com/8x200jffV9v42vm6lw3VC01" target="_blank" rel="noopener">Donate</a>
+        </span>
       </nav>
     </div>
   </header>
-  <section class="hero" style="padding-bottom:1.2rem;">
-    <div class="container">
-      <span class="eyebrow">A Better Way</span>
-      <h1>Vote no, and fund operations the smart way.</h1>
-      <p class="lead">The choice is not between this tax and shutting down transit. The money to keep trains and buses running already exists inside the budgets the region is pouring into capital megaprojects. A no vote forces a better plan.</p>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">A Better Way</span>
+        <h1>Vote no, and fund operations the smart way.</h1>
+        <p class="lead">The choice is not between this tax and shutting down transit. The money to keep trains and buses running already exists inside the budgets the region is pouring into capital megaprojects. A no vote forces a better plan.</p>
+      </div>
+      <div class="hero-figure">
+        <img src="art/transit-hero.svg" alt="Illustration of a Bay Area train and bus beside the bay and a bridge" />
+      </div>
     </div>
   </section>
 
@@ -165,6 +57,7 @@
 
       <div class="callout"><strong>Our position:</strong> Bay Area transit already receives about $6 billion of tax and toll money every year. State and local officials should figure out how to get people where they need to go with that money before demanding more.</div>
 
+      <div class="table-wrap">
       <table class="data-table">
         <caption>Tax, toll, and government grant support to Bay Area transit operators, fiscal year 2024-25, in millions of dollars, across Alameda, Contra Costa, San Francisco, San Mateo, and Santa Clara counties. Excludes fares, parking, advertising, and investment income. Audited figures from each operator's FY2024-25 Annual Comprehensive Financial Report; AC Transit, WETA, and the smaller operators are estimated from budgets or the prior audited year. A fuller breakdown is on the <a href="index.html#already">home page</a>.</caption>
         <thead><tr><th>Operator</th><th>FY2024-25 support</th></tr></thead>
@@ -176,6 +69,7 @@
           <tr><td><strong>Total</strong></td><td class="aft"><strong>~$6,242M</strong></td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>Redirect money that is already being spent</h3>
       <p>California spends roughly a billion dollars a year of cap-and-invest revenue on a high-speed rail project that will not carry a single Bay Area commuter and will not even serve the Central Valley until the 2030s. A portion of that money can be redirected to keep existing Bay Area buses and trains running today, where riders actually need them.</p>
@@ -204,5 +98,6 @@
       <div class="footer-legal">Paid for by Committee for Affordable Bay Area Transit Sponsored by Contra Costa Taxpayers Association. Not authorized by any candidate or committee controlled by a candidate.</div>
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>
