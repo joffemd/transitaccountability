@@ -83,14 +83,26 @@
           <div>
             <label for="citySelect">Look up any city or area in the five counties</label>
             <select id="citySelect" aria-describedby="lookupHelp"><option value="">Select a city or area</option></select>
+            <label for="famSize" style="display:block;margin-top:1rem;">Household size (optional)</label>
+            <select id="famSize">
+              <option value="">Average household</option>
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+              <option value="6">6 or more</option>
+            </select>
             <div id="lookupHelp" class="lookup-notes">The increase is half a cent in Alameda, Contra Costa, San Mateo, and Santa Clara counties, and a full cent in San Francisco.</div>
             <div class="lookup-notes" id="placeNote" style="margin-top:0.8rem;">Pick a location to see the comparison.</div>
           </div>
           <div class="lookup-results">
             <div class="rate-box current"><h4>Your rate today</h4><div class="rate" id="curRate">&mdash;</div><p>Current combined rate</p></div>
             <div class="rate-box after"><h4>If the tax passes</h4><div class="rate" id="aftRate">&mdash;</div><p>With the transit tax added</p></div>
+            <div class="rate-box" id="costBox" style="grid-column:1 / -1;border-left:5px solid var(--teal);display:none;"><h4>Estimated added cost of this tax</h4><div class="rate" id="costRate">&mdash;</div><p id="costNote">per year for your household</p></div>
           </div>
         </div>
+        <p class="lookup-notes" style="max-width:48rem;">Annual cost is an estimate of the new tax only, based on typical taxable household spending from the U.S. Bureau of Labor Statistics <a href="https://www.bls.gov/cex/tables.htm">Consumer Expenditure Survey</a> (West region), scaled to household size. Actual amounts vary with what you buy.</p>
       </div>
     </div>
   </section>
@@ -333,19 +345,32 @@
   {c:"Walnut Creek",k:"Contra Costa",cur:9.250,aft:9.750},
   {c:"Woodside",k:"San Mateo",cur:9.375,aft:9.875}
 ];
-    var sel=document.getElementById('citySelect');
+    var HH={"Alameda":2.353,"Albany":2.386,"Antioch":3.118,"Atherton":2.769,"Belmont":2.439,"Berkeley":2.133,"Brentwood":2.973,"Brisbane":2.337,"Burlingame":2.333,"Campbell":2.427,"Clayton":2.605,"Colma":2.69,"Concord":2.607,"Cupertino":2.844,"Daly City":3.1,"Danville":2.675,"Dublin":2.784,"East Palo Alto":3.682,"El Cerrito":2.379,"Emeryville":1.732,"Foster City":2.46,"Fremont":2.924,"Gilroy":3.253,"Half Moon Bay":2.428,"Hayward":3.028,"Hercules":2.824,"Hillsborough":2.915,"Lafayette":2.566,"Livermore":2.623,"Los Altos":2.742,"Los Altos Hills":2.861,"Los Gatos":2.474,"Martinez":2.357,"Menlo Park":2.476,"Millbrae":2.63,"Milpitas":3.129,"Monte Sereno":2.78,"Moraga":2.595,"Morgan Hill":2.897,"Mountain View":2.293,"Newark":3.01,"Oakland":2.326,"Oakley":3.195,"Orinda":2.698,"Pacifica":2.567,"Palo Alto":2.481,"Piedmont":2.8,"Pinole":2.649,"Pittsburg":3.13,"Pleasant Hill":2.352,"Pleasanton":2.638,"Portola Valley":2.373,"Redwood City":2.53,"Richmond":2.845,"San Bruno":2.587,"San Carlos":2.458,"San Francisco":2.106,"San Jose":2.863,"San Leandro":2.702,"San Mateo":2.452,"San Pablo":3.199,"San Ramon":2.864,"Santa Clara":2.519,"Saratoga":2.787,"South San Francisco":2.849,"Sunnyvale":2.571,"Union City":3.082,"Walnut Creek":2.066,"Woodside":2.608,"Unincorporated Alameda County":2.839,"Unincorporated Contra Costa County":2.724,"Unincorporated San Mateo County":2.712,"Unincorporated Santa Clara County":2.828};
+    var BASE=25456.2, AVGCU=2.6, ELAST=0.65;
+    function taxableSpend(n){ return BASE*Math.pow(n/AVGCU, ELAST); }
+    var sel=document.getElementById('citySelect'), fam=document.getElementById('famSize');
     var cur=document.getElementById('curRate'), aft=document.getElementById('aftRate'), note=document.getElementById('placeNote');
+    var costBox=document.getElementById('costBox'), costRate=document.getElementById('costRate'), costNote=document.getElementById('costNote');
     function fmt(v){return v.toFixed(3)+'%';}
+    function money(v){return '$'+Math.round(v).toLocaleString();}
     TAX.slice().sort(function(a,b){return a.c.localeCompare(b.c);}).forEach(function(r){
       var o=document.createElement('option'); o.value=r.c; o.textContent=r.c+'  ('+r.k+')'; sel.appendChild(o);
     });
-    sel.addEventListener('change',function(){
+    function update(){
       var rec=TAX.filter(function(r){return r.c===sel.value;})[0];
-      if(!rec){cur.innerHTML=aft.innerHTML='&mdash;'; note.textContent='Pick a location to see the comparison.'; return;}
+      if(!rec){ cur.innerHTML=aft.innerHTML='&mdash;'; note.textContent='Pick a location to see the comparison.'; costBox.style.display='none'; return; }
       cur.textContent=fmt(rec.cur); aft.textContent=fmt(rec.aft);
-      var delta=(rec.aft-rec.cur).toFixed(3);
-      note.innerHTML='<strong>'+rec.c+'</strong> ('+rec.k+' County): today '+fmt(rec.cur)+', and '+fmt(rec.aft)+' if the transit tax passes, an increase of '+delta+' points.';
-    });
+      var deltaPts=rec.aft-rec.cur;
+      note.innerHTML='<strong>'+rec.c+'</strong> ('+rec.k+' County): today '+fmt(rec.cur)+', and '+fmt(rec.aft)+' if the transit tax passes, an increase of '+deltaPts.toFixed(3)+' points.';
+      var size=fam.value ? parseFloat(fam.value) : (HH[rec.c]||AVGCU);
+      var cost=taxableSpend(size)*deltaPts/100;
+      costRate.textContent=money(cost);
+      var who=fam.value ? ('a household of '+(fam.value==='6'?'6 or more':fam.value)) : ('a typical '+rec.c+' household');
+      costNote.textContent='per year for '+who+', on top of what you pay today';
+      costBox.style.display='';
+    }
+    sel.addEventListener('change',update);
+    fam.addEventListener('change',update);
   })();
   </script>
   <footer class="footer">
