@@ -160,3 +160,12 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
   .data-table th, .data-table td { padding:0.6rem 0.6rem; font-size:0.9rem; }
   .brand-text { font-size:0.95rem; }
 }
+
+/* ===== Review tweaks ===== */
+/* Enlarge the city/area lookup dropdown */
+.lookup-grid label[for="citySelect"] { font-size:1.02rem; font-weight:700; color:var(--navy); }
+#citySelect { width:100%; margin-top:0.5rem; padding:0.9rem 1.05rem; font-family:inherit; font-size:1.18rem; font-weight:600; color:var(--navy); background:#fff; border:1px solid var(--border); border-radius:14px; cursor:pointer; box-shadow:0 2px 8px rgba(15,39,64,0.06); }
+#citySelect:hover { border-color:var(--teal); }
+/* Make in-body links read as links (citation credibility) */
+.section-title p a, .hero p.lead a, .fact-card p a, .lookup-notes a, .data-table caption a, .callout a:not(.button) { color:var(--blue); font-weight:600; text-decoration:underline; text-underline-offset:2px; }
+.dark-section .section-title p a, .cut-card p a { color:var(--gold); }
