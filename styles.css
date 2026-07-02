@@ -169,3 +169,29 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 /* Make in-body links read as links (citation credibility) */
 .section-title p a, .hero p.lead a, .fact-card p a, .lookup-notes a, .data-table caption a, .callout a:not(.button) { color:var(--blue); font-weight:600; text-decoration:underline; text-underline-offset:2px; }
 .dark-section .section-title p a, .cut-card p a { color:var(--gold); }
+
+/* ===== Volunteer signup form (moved from index.html) ===== */
+.vform label { display:block; font-weight:700; color:var(--navy); font-size:0.9rem; margin-bottom:0.9rem; }
+.vform .vrow { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.vform input, .vform select, .vform textarea { display:block; width:100%; margin-top:0.35rem; padding:0.7rem 0.8rem; border:1px solid var(--border); border-radius:12px; font-family:inherit; font-size:1rem; font-weight:500; color:var(--navy); background:#fff; box-sizing:border-box; }
+.vform textarea { resize:vertical; }
+@media (max-width:720px){ .vform .vrow { grid-template-columns:1fr; } }
+
+/* ===== Anchor offset for the sticky header ===== */
+section[id], #volunteer { scroll-margin-top: 92px; }
+
+/* ===== Zebra striping for long data tables ===== */
+.data-table tbody tr:nth-child(even) td { background: rgba(15,39,64,0.035); }
+
+/* ===== Print: clean handouts for meetings ===== */
+@media print {
+  .site-header, .nav-toggle, .hero-actions, .nav-cta-group, .button, .cta { display:none !important; }
+  body { background:#fff !important; }
+  .hero-figure { display:none; }
+  .hero-art, .fact-card, .tool-card, .lookup-card, .data-table, .footer-card, .cut-card, .notice-card, .quote-card, .callout { box-shadow:none !important; }
+  .dark-section { background:#fff !important; }
+  .dark-section *, .quote-card, .quote-card *, .hero-art, .hero-art * { color:#17202c !important; background:transparent !important; border-color:rgba(15,39,64,0.25) !important; }
+  .cut-card, .quote-card { border:1px solid rgba(15,39,64,0.25); }
+  a { color:#17202c; }
+  .prose a, .callout a { text-decoration:underline; }
+}
