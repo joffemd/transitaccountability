@@ -1,0 +1,13 @@
+{
+  "name": "transit-accountability",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cleancss -o styles.min.css styles.css && esbuild site.js --minify --outfile=site.min.js",
+    "preview": "pnpm run build && node -e \"const fs=require('fs'),path=require('path'); fs.rmSync('dist',{recursive:true,force:true}); fs.mkdirSync('dist'); fs.readdirSync('.').forEach(f=>{ if(!['node_modules','.git','dist','styles.css','site.js','styles.min.css','site.min.js'].includes(f)) fs.cpSync(f,path.join('dist',f),{recursive:true}); }); fs.copyFileSync('styles.min.css','dist/styles.css'); fs.copyFileSync('site.min.js','dist/site.js');\" && python -m http.server 8000 --directory dist"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "esbuild": "^0.28.1"
+  }
+}
