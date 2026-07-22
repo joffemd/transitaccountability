@@ -85,7 +85,7 @@ section { padding:2.1rem 0; }
 .rate-box { padding:1.05rem; border-radius:18px; background:rgba(255,255,255,0.94); border:1px solid rgba(15,39,64,0.1); }
 .rate-box.current { border-left:5px solid var(--blue); }
 .rate-box.after { border-left:5px solid var(--red); }
-.rate-box h4 { margin:0 0 0.3rem; font-size:0.92rem; color:var(--muted); }
+.rate-box h3 { margin:0 0 0.3rem; font-size:0.92rem; color:var(--muted); }
 .rate-box .rate { font-size:clamp(1.7rem,3vw,2.4rem); font-weight:800; color:var(--navy); line-height:1.05; }
 .rate-box p { margin:0.4rem 0 0; color:var(--muted); font-size:0.9rem; }
 .lookup-notes { color:var(--muted); font-size:0.92rem; margin-top:0.9rem; }
