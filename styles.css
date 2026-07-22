@@ -183,6 +183,25 @@ section[id], #volunteer { scroll-margin-top: 92px; }
 /* ===== Zebra striping for long data tables ===== */
 .data-table tbody tr:nth-child(even) td { background: rgba(15,39,64,0.035); }
 
+/* ===== FPPC Disclaimer Box ===== */
+.fppc-box {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem auto 0;
+  max-width: 600px;
+  background-color: #fff;
+  color: var(--navy);
+  font-size: 0.85rem;
+  box-shadow: var(--shadow);
+}
+@media (prefers-color-scheme: dark) {
+  .dark-section .fppc-box {
+    background-color: transparent;
+    border-color: rgba(15,39,64,0.25);
+  }
+}
+
 /* ===== Print: clean handouts for meetings ===== */
 @media print {
   .site-header, .nav-toggle, .hero-actions, .nav-cta-group, .button, .cta { display:none !important; }

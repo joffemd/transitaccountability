@@ -40,12 +40,7 @@ jobs:
         run: pnpm build
 
       - name: Prepare deployment package
-        run: |
-          mkdir dist
-          rsync -a --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='dist' --exclude='*.md' --exclude='package.json' --exclude='pnpm-*.yaml' --exclude='.gitignore' --exclude='*.diff' --exclude='site.js' --exclude='styles.css' ./ dist/
-          mv dist/styles.min.css dist/styles.css
-          mv dist/site.min.js dist/site.js
-          touch dist/.nojekyll
+        run: touch dist/.nojekyll
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v5
