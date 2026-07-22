@@ -1,3 +1,6 @@
 node_modules/
 styles.min.css
 site.min.js
+dist/
+fonts/
+gsc_extract/

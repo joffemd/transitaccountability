@@ -34,3 +34,4 @@ pnpm run build
 2. **Legal & Compliance**: Preserve all required campaign FPPC disclosures in page footers.
 3. **Single Script Pattern**: All JavaScript logic is maintained in `site.js`. Do not re-add inline `<script>` logic to HTML pages.
 4. **Grammar & Style**: Never use Oxford commas in content or commit messages.
+5. **Git Push**: Never run `git push` without explicit permission from the user.
