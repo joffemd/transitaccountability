@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Invitation - Committee for Affordable Bay Area Transit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --dark-blue: #0f253f;
+            --gold: #d4a353;
+            --light-gray: #f8f9fa;
+            --box-bg: #f4f5f6;
+            --text-main: #333333;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-invitation {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #d1d9e2;
+        }
+
+        .header-date {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #e2e8f0;
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 25px 0;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .header-title span {
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 2px;
+        }
+
+        .header-subtitle {
+            font-size: 17px;
+            margin: 0;
+            color: #e2e8f0;
+        }
+        
+        .header-subtitle strong {
+            font-weight: 600;
+            color: white;
+        }
+
+        .info-bar {
+            background-color: var(--light-gray);
+            padding: 35px 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .info-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .info-item h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #718096;
+            margin: 0 0 8px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .info-item p.sub-text {
+            font-weight: 400;
+            color: #4a5568;
+            font-size: 15px;
+            margin-top: 2px;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            margin-bottom: 35px;
+            color: #2d3748;
+        }
+
+        .intro-text p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .speaker-box {
+            background-color: var(--box-bg);
+            border-left: 4px solid var(--gold);
+            padding: 30px 40px;
+            margin: 45px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .speaker-box-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #718096;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .speaker {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #2d3748;
+        }
+
+        .speaker:last-child {
+            margin-bottom: 0;
+        }
+
+        .speaker strong {
+            color: #1a202c;
+            font-weight: 600;
+        }
+
+        .money-box {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 35px 40px;
+            margin: 45px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .money-box-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #a0aec0;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .money-box p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+
+        .money-box strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center;
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 50px 0 40px 0;
+            border: 1px solid #eaeaea;
+        }
+
+        .cta-heading {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin: 0 0 10px 0;
+        }
+
+        .cta-subtext {
+            font-size: 16px;
+            color: #4a5568;
+            margin: 0 0 25px 0;
+            font-weight: 500;
+        }
+
+        .register-btn-large {
+            background-color: var(--gold);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 48px;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px -1px rgba(212, 163, 83, 0.3);
+        }
+
+        .register-btn-large:hover {
+            background-color: #c49446;
+            box-shadow: 0 6px 12px -2px rgba(212, 163, 83, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .register-btn-large:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px -1px rgba(212, 163, 83, 0.3);
+        }
+
+        .footer-signoff {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #4a5568;
+        }
+        
+        .footer-signoff strong {
+            display: block;
+            margin-top: 8px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        @media (max-width: 600px) {
+            .cta-section {
+                padding: 30px 20px;
+            }
+            
+            .header-title {
+                font-size: 26px;
+            }
+            
+            .speaker-box, .money-box {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-content">
+            <div class="header-invitation">An Invitation</div>
+            <div class="header-date">Wednesday, September 2, 2026 &middot; San Jose</div>
+            <h1 class="header-title">The Rebirth of <br><span>Bay Area</span> Taxpayer Activism</h1>
+            <p class="header-subtitle">A reception at Club Auto Sport with <strong>Jon Coupal</strong>, <strong>Debora Allen</strong> and guests.</p>
+        </div>
+    </div>
+
+    <div class="info-bar">
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>When</h3>
+                <p>Wed., Sept. 2, 2026</p>
+                <p class="sub-text">6:00 – 8:00 p.m.</p>
+            </div>
+            <div class="info-item">
+                <h3>Where</h3>
+                <p>Club Auto Sport</p>
+                <p class="sub-text">521 Charcot Ave.<br>San Jose, CA 95131</p>
+            </div>
+            <div class="info-item">
+                <h3>Admission</h3>
+                <p>$50</p>
+                <p class="sub-text">Hors d'oeuvres included<br>Bar and refreshments available</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="intro-text">
+            <p>For years, tax measures passed here without much of a fight. Nobody showed up to argue the other side.</p>
+            <p>That has changed. We are organizing to defeat the November transit sales tax across five counties and we intend to win. While we all support functional public transit, we can no longer hand blank checks to unaccountable agencies that have burned through billions in post-pandemic aid while refusing to adapt to our new reality.</p>
+            <p>Defeating this tax is only the first step. What we are building is meant to outlast a single election. We would rather explain that part in person.</p>
+        </div>
+
+        <div class="speaker-box">
+            <div class="speaker-box-title">Speaking</div>
+            <div class="speaker">
+                <strong>Jon Coupal</strong>, president of the Howard Jarvis Taxpayers Association. For over two decades he has led the fight to defend Proposition 13, the cornerstone of taxpayer protection that keeps people in their homes while assuring stable, predictable revenues for local governments.
+            </div>
+            <div class="speaker">
+                <strong>Debora Allen</strong>, who recently concluded an eight-year term on the BART Board of Directors. Throughout her tenure she was a relentless advocate for fiscal accountability and transparency, consistently asking the tough financial questions the agency preferred to avoid.
+            </div>
+            <div class="speaker">
+                Plus other special guests.
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <p>Club Auto Sport is one of Silicon Valley's most stunning event venues. Our reception takes place within their private TMFC Museum, so you will be surrounded by an incredible collection of classic cars, historical artifacts and sports memorabilia throughout the evening.</p>
+        </div>
+
+        <div class="money-box">
+            <div class="money-box-title">About the money</div>
+            <p>Your $50 covers our overhead for hosting the event. It does not fund the campaign. We are up against agencies and unions with far deeper pockets and they are not worried about our ticket sales. <strong>If you can give more than $50, please do.</strong> A dollar that arrives before Labor Day is worth several that arrive in October.</p>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-heading">Secure Your Spot</h2>
+            <p class="cta-subtext">Space is strictly limited for this private event.<br>Please register early so you don't miss out.</p>
+            <button class="register-btn-large" onclick="alert('Registration opening soon!')">Register Now</button>
+        </div>
+
+        <div class="footer-signoff">
+            Hope to see you there,
+            <strong>Committee for Affordable Bay Area Transit</strong>
+        </div>
+    </div>
+
+</body>
+</html>
