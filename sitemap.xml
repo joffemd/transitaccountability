@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://transitaccountability.com/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://nonewtransittax.com/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://transitaccountability.com/regressive-tax.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://nonewtransittax.com/regressive-tax.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://transitaccountability.com/transit-failures.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://nonewtransittax.com/transit-failures.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://transitaccountability.com/salaries.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://nonewtransittax.com/salaries.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://transitaccountability.com/yes-funding.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://nonewtransittax.com/yes-funding.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://transitaccountability.com/better-way.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://nonewtransittax.com/better-way.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nonewtransittax.com/privacy-policy.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
