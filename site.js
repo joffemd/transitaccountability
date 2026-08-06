@@ -43,8 +43,8 @@ function submitVolunteer(){
     }
 
     // City Tax Calculator (Homepage only)
-    var sel = document.getElementById('citySelect'), fam = document.getElementById('famSize');
-    if (!sel || !fam) return;
+    var sel = document.getElementById('citySelect');
+    if (!sel) return;
 
     var TAX=[
       {c:"Alameda",k:"Alameda",cur:10.750,aft:11.250},
@@ -122,13 +122,8 @@ function submitVolunteer(){
       {c:"Woodside",k:"San Mateo",cur:9.375,aft:9.875}
     ];
 
-    var BASE=25456.2, AVGCU=2.6, ELAST=0.65;
-    function taxableSpend(n){ return BASE*Math.pow(n/AVGCU, ELAST); }
     var cur=document.getElementById('curRate'), aft=document.getElementById('aftRate'), note=document.getElementById('placeNote');
-    var curSub=document.getElementById('curSub'), aftSub=document.getElementById('aftSub');
-    var costBox=document.getElementById('costBox'), costRate=document.getElementById('costRate'), costNote=document.getElementById('costNote');
     function fmt(v){return v.toFixed(3)+'%';}
-    function money(v){return '$'+Math.round(v).toLocaleString();}
 
     TAX.slice().sort(function(a,b){return a.c.localeCompare(b.c);}).forEach(function(r){
       var o=document.createElement('option'); o.value=r.c; o.textContent=r.c+'  ('+r.k+')'; sel.appendChild(o);
@@ -136,21 +131,11 @@ function submitVolunteer(){
 
     function update(){
       var rec=TAX.filter(function(r){return r.c===sel.value;})[0];
-      if(!rec){ cur.innerHTML=aft.innerHTML='&mdash;'; curSub.textContent='Current combined rate'; aftSub.textContent='With the transit tax added'; note.textContent='Pick a location to see the comparison.'; costBox.style.display='none'; return; }
+      if(!rec){ cur.innerHTML=aft.innerHTML='&mdash;'; note.textContent='Pick a location to see the comparison.'; return; }
       cur.textContent=fmt(rec.cur); aft.textContent=fmt(rec.aft);
-      var size=parseFloat(fam.value)||2;
-      var spend=taxableSpend(size);
-      var nowD=spend*rec.cur/100, aftD=spend*rec.aft/100;
-      curSub.textContent='\u2248 '+money(nowD)+' a year for your household';
-      aftSub.textContent='\u2248 '+money(aftD)+' a year for your household';
       var deltaPts=rec.aft-rec.cur;
       note.innerHTML='<strong>'+rec.c+'</strong> ('+rec.k+' County): today '+fmt(rec.cur)+', and '+fmt(rec.aft)+' if the transit tax passes, an increase of '+deltaPts.toFixed(3)+' points.';
-      costRate.textContent=money(aftD-nowD);
-      costNote.textContent='more per year for a household of '+(fam.value==='6'?'6 or more':fam.value);
-      costBox.style.display='';
     }
-
-    sel.addEventListener('change',update);
-    fam.addEventListener('change',update);
+    sel.addEventListener('change', update);
   });
 })();
