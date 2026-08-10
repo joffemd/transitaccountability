@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap">
   </noscript>
   <link rel="stylesheet" href="/styles.css">
+  <script>
+    var path = window.location.pathname;
+    if (path !== path.toLowerCase()) {
+      window.location.replace(path.toLowerCase() + window.location.search + window.location.hash);
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
