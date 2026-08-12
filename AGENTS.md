@@ -35,3 +35,4 @@ pnpm run build
 3. **Single Script Pattern**: All JavaScript logic is maintained in `site.js`. Do not re-add inline `<script>` logic to HTML pages.
 4. **Grammar & Style**: Never use Oxford commas in content or commit messages.
 5. **Git Push**: Never run `git push` without explicit permission from the user.
+6. **Commit Messages**: Commit messages must summarize the final state of changes logically from a maintainer's perspective. Never reference intermediary chat history, agent corrections or conversational context (e.g. "fixed text after user asked to remove it").
