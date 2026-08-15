@@ -236,10 +236,19 @@
     
     /* Dark mode enhancements */
     @media (prefers-color-scheme: dark) {
-      .info-bar { background-color: rgba(15, 39, 64, 0.05); }
-      .speaker-box, .cta-section { background-color: rgba(15, 39, 64, 0.03); }
-      .cta-heading, .speaker strong, .footer-signoff strong { color: var(--text); }
-      .cta-outline { border-color: rgba(255,255,255,0.2); color: var(--text); }
+      .fundraiser-header, .money-box, .why-attend {
+        background-color: #0b1f37;
+        color: #fff;
+      }
+      .fundraiser-title, .fundraiser-subtitle strong, .money-box strong { color: #fff; }
+      .fundraiser-invitation, .fundraiser-date, .fundraiser-subtitle, .money-box-title, .money-box p, .attend-icon, .attend-item h4 {
+        /* Preserve explicitly light colors since background is still dark */
+      }
+      
+      .info-bar { background-color: transparent; border-bottom: 1px solid var(--border); }
+      .speaker-box, .cta-section { background-color: var(--card); }
+      .cta-heading, .speaker strong, .footer-signoff strong { color: var(--navy); }
+      .cta-outline { border-color: var(--border); color: var(--navy); }
     }
 
     /* Mobile responsiveness */

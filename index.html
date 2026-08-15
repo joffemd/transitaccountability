@@ -94,6 +94,15 @@
     .promo-banner a:hover {
       opacity: 0.75;
     }
+    @media (prefers-color-scheme: dark) {
+      .promo-banner {
+        color: #0f2740; /* Enforce dark text against the yellow background */
+      }
+      .promo-banner a {
+        color: #0f2740;
+        border-bottom-color: #0f2740;
+      }
+    }
   </style>
   <div class="promo-banner">
     <span class="promo-badge">Don't Miss Out</span>

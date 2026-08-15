@@ -214,3 +214,57 @@ section[id], #volunteer { scroll-margin-top: 92px; }
   a { color:#17202c; }
   .prose a, .callout a { text-decoration:underline; }
 }
+
+/* ===== Dark Mode Support ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navy: #eef5fb;
+    --blue: #63b3ed;
+    --teal: #14b8a6;
+    --gold: #f6e05e;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --white: #0f172a;
+    --card: rgba(30, 41, 59, 0.9);
+    --border: rgba(255, 255, 255, 0.12);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(14,138,107,0.15), transparent 30%),
+      radial-gradient(circle at top right, rgba(30,95,143,0.15), transparent 28%),
+      linear-gradient(180deg, #020617 0%, #0f172a 44%, #020617 100%);
+  }
+
+  .site-header { background: rgba(15, 23, 42, 0.92); border-bottom: 1px solid var(--border); }
+  .nav-toggle { background: rgba(30, 41, 59, 0.7); }
+  .nav-links { background: #0f172a; border-color: var(--border); }
+  
+  .button-secondary { background: rgba(30, 41, 59, 0.88); color: var(--navy); border-color: var(--border); }
+  
+  .ba-table { background: rgba(255, 255, 255, 0.05); }
+  .rate-box { background: rgba(30, 41, 59, 0.94); }
+  
+  .data-table th { background: rgba(255, 255, 255, 0.04); color: var(--navy); }
+  .data-table tbody tr:nth-child(even) td { background: rgba(255, 255, 255, 0.035); }
+  
+  .footer-card { background: rgba(30, 41, 59, 0.8); }
+  
+  #citySelect, #famSize { background: #1e293b; color: var(--navy); }
+  .vform input, .vform select, .vform textarea { background: #1e293b; color: var(--navy); }
+  
+  /* Preserve original styles in dark components that are already dark in light mode */
+  .dark-section { background: linear-gradient(145deg, #0b1f37 0%, #143a63 100%); }
+  .cut-card { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.13); }
+  .callout { background: linear-gradient(145deg, rgba(14,138,107,0.1), rgba(30,95,143,0.08)); }
+  .quote-card { background: linear-gradient(145deg, rgba(15,39,64,0.98), rgba(30,95,143,0.96)); color: #fff; }
+  .hero-art { background: linear-gradient(135deg, #0b2138, #13507f 58%, #0e8a6b 130%); color: #fff; }
+  
+  /* Fix inverted text visibility on specifically rounded/styled elements */
+  .button-primary { background: linear-gradient(135deg, #1e5f8f, #0f2740); color: #fff; }
+  .fppc-box { background-color: var(--card); color: var(--navy); border-color: var(--border); }
+  
+  /* Some explicit overrides for elements using gradient backgrounds */
+  .fact-number, .tool-icon { background: rgba(255, 255, 255, 0.1); color: var(--navy); }
+}
