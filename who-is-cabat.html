@@ -102,8 +102,34 @@
     .bio-desc p {
       margin: 0 0 1rem;
     }
+    .bio-desc a {
+      color: var(--teal);
+      text-decoration: underline;
+      font-weight: 500;
+    }
     .bio-desc p:last-child {
       margin-bottom: 0;
+    }
+    .bio-contact {
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-align: left;
+      width: 100%;
+    }
+    .bio-contact p {
+      margin: 0 0 0.5rem;
+    }
+    .bio-contact strong {
+      color: var(--navy);
+      font-weight: 700;
+      margin-right: 0.4rem;
+    }
+    .bio-contact a {
+      color: var(--teal);
+      text-decoration: underline;
     }
     .bio-social {
       display: flex;
@@ -136,6 +162,9 @@
       .bio-avatar {
         border-color: var(--card);
         background: rgba(255, 255, 255, 0.05);
+      }
+      .bio-contact strong {
+        color: var(--text);
       }
       .bio-title {
         background: rgba(244, 185, 66, 0.2);
@@ -185,12 +214,24 @@
         <div class="bio-grid">
           
           <div class="bio-card">
-            <div class="bio-avatar">GD</div>
+            <img src="/art/GDhs.webp" alt="Gregg Dieguez" class="bio-avatar" />
             <h3>Gregg Dieguez</h3>
             <div class="bio-title">President</div>
             <div class="bio-desc">
-              <p>Gregg is a native San Franciscan and semi-retired entrepreneur with a long history of community advocacy in San Mateo County. As a resident of Montara and an active member of the Midcoast Community Council, he frequently provides sharp, analytical commentary on regional infrastructure and environmental policy.</p>
-              <p>A former tech executive who co-founded MIT's Clean Tech Program in Northern California, Gregg brings rigorous scrutiny to top-down regional planning blueprints. He is a steadfast advocate for sensible, cost-effective investments that actually serve communities without placing undue burdens on taxpayers.</p>
+              <p>Gregg is a native San Franciscan and semi retired entrepreneur with a long history of community advocacy in San Mateo County. As a resident of Montara and a former member of the Midcoast Community Council he frequently provides sharp analytical commentary on regional infrastructure and environmental policy. A former finance and tech executive who helped found MIT's Clean Tech Program in Northern California in 2003, Gregg has pioneered concepts in financial analysis and fiscal sustainability.</p>
+              <p>He is a steadfast advocate for sensible cost effective investments that actually serve communities without placing undue burdens on taxpayers including telecommunications, stormwater management and water &amp; sewer. As President he has authored papers on the True Cost of Transit, flaws in Plan Bay Area 2050+, hidden costs of public works infrastructure, cost benefit of major infrastructure projects and a better approach to Bay Area Transit than the SB63 RTM approach. All of these are available on the <a href="https://shiftbayarea.substack.com/" target="_blank" rel="noopener">SHIFT SubStack</a>.</p>
+            </div>
+            <div class="bio-contact">
+              <p><strong>Phone</strong> <span>&#40;&#54;&#53;&#48;&#41;&#32;&#50;&#57;&#51;&#32;&#57;&#50;&#51;&#49;</span></p>
+              <p><strong>Email</strong> <a href="mailto:gadieguez@gmail.com">&#103;&#97;&#100;&#105;&#101;&#103;&#117;&#101;&#122;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+            </div>
+            <div class="bio-social">
+              <a href="https://www.linkedin.com/in/gregg-dieguez-32733a1/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+                <picture>
+                  <source srcset="/art/InBug-White.png" media="(prefers-color-scheme: dark)">
+                  <img src="/art/InBug-Black.png" alt="LinkedIn" width="22" height="22" />
+                </picture>
+              </a>
             </div>
           </div>
 
