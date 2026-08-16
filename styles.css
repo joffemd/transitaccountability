@@ -242,6 +242,7 @@ section[id], #volunteer { scroll-margin-top: 92px; }
   .nav-links { background: #0f172a; border-color: var(--border); }
   
   .button-secondary { background: rgba(30, 41, 59, 0.88); color: var(--navy); border-color: var(--border); }
+  .cta-outline { border-color: rgba(255, 255, 255, 0.2); }
   
   .ba-table { background: rgba(255, 255, 255, 0.05); }
   .rate-box { background: rgba(30, 41, 59, 0.94); }
