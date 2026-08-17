@@ -138,7 +138,74 @@
       width: auto;
       display: block;
     }
+    .cert-slot-machine {
+      margin-bottom: 1.4rem;
+      margin-top: -0.4rem;
+      display: flex;
+      justify-content: center;
+    }
+    .cert-slot-window {
+      height: 28px;
+      overflow: hidden;
+      position: relative;
+      width: 80px;
+      border-radius: 6px;
+      background: rgba(14, 138, 107, 0.1);
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .cert-slot-track {
+      display: flex;
+      flex-direction: column;
+      animation: slot-spin 9s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    }
+    .cert-badge {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes slot-spin {
+      0%, 11.1% { transform: translateY(0); }
+      16.6%, 27.7% { transform: translateY(-28px); }
+      33.3%, 44.4% { transform: translateY(-56px); }
+      50%, 61.1% { transform: translateY(-84px); }
+      66.6%, 77.7% { transform: translateY(-112px); }
+      83.3%, 94.4% { transform: translateY(-140px); }
+      100% { transform: translateY(-168px); }
+    }
+    .bio-avatar-wrapper {
+      position: relative;
+      display: inline-flex;
+      margin-bottom: 1.5rem;
+    }
+    .bio-avatar-wrapper .bio-avatar {
+      margin-bottom: 0;
+    }
+    .medal-badge {
+      position: absolute;
+      bottom: -15px;
+      right: -20px;
+      filter: drop-shadow(0 4px 8px rgba(15,39,64,0.25));
+      transform: rotate(8deg);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 2;
+    }
+    .bio-card:hover .medal-badge {
+      transform: rotate(-5deg) scale(1.1);
+    }
     @media (prefers-color-scheme: dark) {
+      .cert-slot-window {
+        background: rgba(14, 138, 107, 0.2);
+      }
+      .cert-badge {
+        color: #4bd8b5;
+      }
       .bio-avatar {
         border-color: var(--card);
         background: rgba(255, 255, 255, 0.05);
@@ -263,12 +330,41 @@
           </div>
 
           <div class="bio-card">
-            <div class="bio-avatar">TR</div>
+            <div class="bio-avatar-wrapper">
+              <img src="/art/TARhs.webp" alt="Thomas A. Rubin" class="bio-avatar" />
+              <div class="medal-badge" aria-label="50+ Years Experience">
+                <svg viewBox="0 0 100 120" width="70" height="84">
+                  <!-- Ribbon Tails -->
+                  <path d="M25 60 L10 110 L30 100 L50 115 L50 60 Z" fill="#d93839"/>
+                  <path d="M75 60 L90 110 L70 100 L50 115 L50 60 Z" fill="#bd2122"/>
+                  <!-- Gold Coin Base -->
+                  <circle cx="50" cy="50" r="40" fill="#f4b942" stroke="#d49a2a" stroke-width="4"/>
+                  <!-- Inner Coin Accent -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+                  <!-- Text -->
+                  <text x="50" y="52" font-size="28" font-family="Arial, sans-serif" font-weight="900" text-anchor="middle" fill="#0f2740">50+</text>
+                  <text x="50" y="70" font-size="13" font-family="Arial, sans-serif" font-weight="900" text-anchor="middle" fill="#0f2740">YEARS</text>
+                </svg>
+              </div>
+            </div>
             <h3>Thomas A. Rubin</h3>
-            <div class="bio-title">Transportation Expert</div>
+            <div class="bio-title" style="margin-bottom: 0.8rem;">Transportation Expert</div>
+            <div class="cert-slot-machine">
+              <div class="cert-slot-window">
+                <div class="cert-slot-track">
+                  <span class="cert-badge">CPA</span>
+                  <span class="cert-badge">CMA</span>
+                  <span class="cert-badge">CMC</span>
+                  <span class="cert-badge">CIA</span>
+                  <span class="cert-badge">CGFM</span>
+                  <span class="cert-badge">CFM</span>
+                  <span class="cert-badge">CPA</span>
+                </div>
+              </div>
+            </div>
             <div class="bio-desc">
-              <p>Thomas brings over four decades of unmatched expertise in public finance and surface transportation. He served as the Chief Financial Officer of the Southern California Rapid Transit District and later founded the national transit practice at Deloitte. Over his career he has audited and advised well over 100 transit agencies across North America.</p>
-              <p>As a certified public accountant and veteran industry executive he provides rigorous analysis of transit performance and policy. He consistently advocates for cost effective solutions that prioritize riders over expensive expansion projects. His deep understanding of transit agency budgets makes him a vital voice for taxpayer accountability.</p>
+              <p>Tom has over a half century of experience in public transit, government finance and construction project management. He founded and led the transit industry practice of what is now Deloitte &amp; Touche, LLP as he rose from staff auditor to Partner and National Transit Services Director. He has served well over 100 transit operators, planning agencies and Federal and state agencies with a variety of different types of projects from long-term operating/capital/financial projections and models to IT design and implementation to performance audits and more. His local clients include AC Transit, BART, County Connection, Golden Gate, King County (Seattle) Metro, MTC, Monterey-Salinas Transit, Sac RT and VTA. He has also served CTA, DART, Denver RTD, Metro (Minneapolis/Saint Paul), Miami-Dade Transit, NJTC, SCRTD and Tri-Met.</p>
+              <p>Notably, he also served as the Chief Financial Officer of SCRTD in Los Angeles, the third largest transit agency in the U.S. and AC Transit. He holds a BSBA in Accounting and Finance from the University of Nebraska-Lincoln and an MBA in Finance from Indiana University-Bloomington.</p>
             </div>
           </div>
 
