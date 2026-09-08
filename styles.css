@@ -130,6 +130,76 @@ section { padding:2.1rem 0; }
 .footer-legal { text-align:center; margin-top:0.6rem; font-size:0.78rem; color:var(--muted); }
 a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid rgba(14,138,107,0.45); outline-offset:2px; border-radius:6px; }
 
+
+/* ===== Updates Carousel ===== */
+.updates-section { position: relative; overflow: hidden; }
+.updates-carousel {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0.5rem 1.5rem;
+  margin: 1.2rem -0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) rgba(15,39,64,0.05);
+}
+.updates-carousel::-webkit-scrollbar { height: 8px; }
+.updates-carousel::-webkit-scrollbar-track { background: rgba(15,39,64,0.05); border-radius: 4px; }
+.updates-carousel::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 4px; }
+
+.update-card {
+  flex: 0 0 85%;
+  max-width: 420px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.update-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 50px rgba(15,39,64,0.17);
+}
+.update-quote {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  color: var(--navy);
+  font-family: 'Merriweather', Georgia, serif;
+  font-style: italic;
+  line-height: 1.45;
+}
+.update-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+  font-weight: 600;
+}
+.update-outlet {
+  color: var(--teal);
+}
+.update-link {
+  margin-top: auto;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+.update-link:hover, .update-link:focus-visible {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ===== Responsive ===== */
 @media (max-width:1080px) {
   .nav { position:relative; }
@@ -266,6 +336,12 @@ section[id], #volunteer { scroll-margin-top: 92px; }
   .button-primary { background: linear-gradient(135deg, #1e5f8f, #0f2740); color: #fff; }
   .fppc-box { background-color: var(--card); color: var(--navy); border-color: var(--border); }
   
+
+  .updates-carousel { scrollbar-color: var(--teal) rgba(255,255,255,0.05); }
+  .updates-carousel::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+  .update-card:hover { box-shadow: 0 26px 50px rgba(0, 0, 0, 0.6); }
+  .update-link:hover, .update-link:focus-visible { color: var(--gold); }
+
   /* Some explicit overrides for elements using gradient backgrounds */
   .fact-number, .tool-icon { background: rgba(255, 255, 255, 0.1); color: var(--navy); }
 }
