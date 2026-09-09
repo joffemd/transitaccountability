@@ -52,12 +52,12 @@ function submitVolunteer(){
       {c:"Antioch",k:"Contra Costa",cur:9.750,aft:10.250},
       {c:"Atherton",k:"San Mateo",cur:9.375,aft:9.875},
       {c:"Belmont",k:"San Mateo",cur:9.875,aft:10.375},
-      {c:"Berkeley",k:"Alameda",cur:10.250,aft:10.750},
+      {c:"Berkeley",k:"Alameda",cur:10.250,aft:11.250},
       {c:"Brentwood",k:"Contra Costa",cur:8.750,aft:9.250},
       {c:"Brisbane",k:"San Mateo",cur:9.875,aft:10.375},
       {c:"Burlingame",k:"San Mateo",cur:9.625,aft:10.125},
       {c:"Campbell",k:"Santa Clara",cur:10.500,aft:11.000},
-      {c:"Clayton",k:"Contra Costa",cur:8.750,aft:9.250},
+      {c:"Clayton",k:"Contra Costa",cur:8.750,aft:10.250},
       {c:"Colma",k:"San Mateo",cur:9.875,aft:10.375},
       {c:"Concord",k:"Contra Costa",cur:9.750,aft:10.250},
       {c:"Cupertino",k:"Santa Clara",cur:9.750,aft:10.250},
@@ -72,7 +72,7 @@ function submitVolunteer(){
       {c:"Gilroy",k:"Santa Clara",cur:9.750,aft:10.250},
       {c:"Half Moon Bay",k:"San Mateo",cur:9.875,aft:10.375},
       {c:"Hayward",k:"Alameda",cur:10.750,aft:11.250},
-      {c:"Hercules",k:"Contra Costa",cur:9.250,aft:9.750},
+      {c:"Hercules",k:"Contra Costa",cur:9.250,aft:10.750},
       {c:"Hillsborough",k:"San Mateo",cur:9.375,aft:9.875},
       {c:"Lafayette",k:"Contra Costa",cur:9.250,aft:9.750},
       {c:"Livermore",k:"Alameda",cur:10.250,aft:10.750},
@@ -91,8 +91,8 @@ function submitVolunteer(){
       {c:"Oakland",k:"Alameda",cur:10.750,aft:11.250},
       {c:"Oakley",k:"Contra Costa",cur:8.750,aft:9.250},
       {c:"Orinda",k:"Contra Costa",cur:9.750,aft:10.250},
-      {c:"Pacifica",k:"San Mateo",cur:9.875,aft:10.375},
-      {c:"Palo Alto",k:"Santa Clara",cur:9.750,aft:10.250},
+      {c:"Pacifica",k:"San Mateo",cur:9.875,aft:11.375},
+      {c:"Palo Alto",k:"Santa Clara",cur:9.750,aft:10.750},
       {c:"Piedmont",k:"Alameda",cur:10.250,aft:10.750},
       {c:"Pinole",k:"Contra Costa",cur:10.250,aft:10.750},
       {c:"Pittsburg",k:"Contra Costa",cur:9.250,aft:9.750},
@@ -102,12 +102,12 @@ function submitVolunteer(){
       {c:"Redwood City",k:"San Mateo",cur:9.875,aft:10.375},
       {c:"Richmond",k:"Contra Costa",cur:9.750,aft:10.250},
       {c:"San Bruno",k:"San Mateo",cur:9.875,aft:10.375},
-      {c:"San Carlos",k:"San Mateo",cur:9.375,aft:9.875},
+      {c:"San Carlos",k:"San Mateo",cur:9.375,aft:10.375},
       {c:"San Francisco",k:"San Francisco",cur:8.625,aft:9.625},
       {c:"San Jose",k:"Santa Clara",cur:10.000,aft:10.500},
       {c:"San Leandro",k:"Alameda",cur:10.750,aft:11.250},
-      {c:"San Mateo",k:"San Mateo",cur:9.625,aft:10.125},
-      {c:"San Pablo",k:"Contra Costa",cur:9.500,aft:10.000},
+      {c:"San Mateo",k:"San Mateo",cur:9.625,aft:10.375},
+      {c:"San Pablo",k:"Contra Costa",cur:9.500,aft:10.500},
       {c:"San Ramon",k:"Contra Costa",cur:9.750,aft:10.250},
       {c:"Santa Clara",k:"Santa Clara",cur:9.750,aft:10.250},
       {c:"Saratoga",k:"Santa Clara",cur:9.750,aft:10.250},
@@ -123,7 +123,7 @@ function submitVolunteer(){
     ];
 
     var cur=document.getElementById('curRate'), aft=document.getElementById('aftRate'), note=document.getElementById('placeNote');
-    function fmt(v){return v.toFixed(3)+'%';}
+    function fmt(v){return parseFloat(v.toFixed(3))+'%';}
 
     TAX.slice().sort(function(a,b){return a.c.localeCompare(b.c);}).forEach(function(r){
       var o=document.createElement('option'); o.value=r.c; o.textContent=r.c+'  ('+r.k+')'; sel.appendChild(o);
@@ -134,7 +134,7 @@ function submitVolunteer(){
       if(!rec){ cur.innerHTML=aft.innerHTML='&mdash;'; note.textContent='Pick a location to see the comparison.'; return; }
       cur.textContent=fmt(rec.cur); aft.textContent=fmt(rec.aft);
       var deltaPts=rec.aft-rec.cur;
-      note.innerHTML='<strong>'+rec.c+'</strong> ('+rec.k+' County): today '+fmt(rec.cur)+', and '+fmt(rec.aft)+' if the transit tax passes, an increase of '+deltaPts.toFixed(3)+' points.';
+      note.innerHTML='<strong>'+rec.c+'</strong> ('+rec.k+' County): today '+fmt(rec.cur)+', and '+fmt(rec.aft)+' if all sales tax measures pass, an increase of '+fmt(deltaPts)+'.';
     }
     sel.addEventListener('change', update);
   });
