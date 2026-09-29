@@ -48,3 +48,20 @@ fs.copyFileSync(path.join(rootDir, 'styles.min.css'), path.join(distDir, 'styles
 fs.copyFileSync(path.join(rootDir, 'site.min.js'), path.join(distDir, 'site.js'));
 
 console.log("Build complete. Static HTML files generated in /dist");
+
+function processHtmlFiles(dir) {
+  fs.readdirSync(dir).forEach(file => {
+    const fullPath = path.join(dir, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      processHtmlFiles(fullPath);
+    } else if (fullPath.endsWith('.html')) {
+      let content = fs.readFileSync(fullPath, 'utf8');
+      if (content.includes('<site-footer></site-footer>')) {
+        content = content.replace('<site-footer></site-footer>', footerHtml);
+        fs.writeFileSync(fullPath, content, 'utf8');
+      }
+    }
+  });
+}
+processHtmlFiles(distDir);
+
