@@ -35,7 +35,7 @@ pnpm run build
 3. **Single Script Pattern**: All JavaScript logic is maintained in `site.js`. Do not re-add inline `<script>` logic to HTML pages.
 4. **Grammar & Style**: Never use Oxford commas in content or commit messages.
 5. **Git Push**: Never run `git push` without explicit permission from the user.
-6. **Commit Messages**: Commit messages must summarize the final state of changes logically from a maintainer's perspective. Never reference intermediary chat history, agent corrections or conversational context (e.g. "fixed text after user asked to remove it").
+6. **Commit Messages**: Commit messages must describe the final delta between the new code and the last committed state (`HEAD`) logically from a maintainer's perspective. Never reference intermediary chat history, agent corrections, uncommitted drafts, or conversational context. If an agent introduced a bug, typo, or layout issue and fixed it before committing, the commit message must act as if the code was written perfectly the first time.
 7. **Do not try to run build or preview unless explicitly told**
 8. **Do not interupt user to ask permission to view files**
 9. **Always make sure you implement dark mode when adding new elements**: Dark mode is handled via the `@media (prefers-color-scheme: dark)` query in `styles.css`, primarily by redefining CSS variables (e.g., `--card`, `--navy`, `--border`). Make sure any new components are tested and styled appropriately within that block.
