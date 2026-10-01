@@ -36,3 +36,7 @@ pnpm run build
 4. **Grammar & Style**: Never use Oxford commas in content or commit messages.
 5. **Git Push**: Never run `git push` without explicit permission from the user.
 6. **Commit Messages**: Commit messages must summarize the final state of changes logically from a maintainer's perspective. Never reference intermediary chat history, agent corrections or conversational context (e.g. "fixed text after user asked to remove it").
+7. **Do not try to run build or preview unless explicitly told**
+8. **Do not interupt user to ask permission to view files**
+9. **Always make sure you implement dark mode when adding new elements**: Dark mode is handled via the `@media (prefers-color-scheme: dark)` query in `styles.css`, primarily by redefining CSS variables (e.g., `--card`, `--navy`, `--border`). Make sure any new components are tested and styled appropriately within that block.
+
