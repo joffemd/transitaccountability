@@ -42,6 +42,28 @@ function submitVolunteer(){
       });
     }
 
+    // Lazy load video iframes inside details accordions only when opened
+    var accordions = document.querySelectorAll('details');
+    for (var i = 0; i < accordions.length; i++) {
+      (function (det) {
+        function loadFrames() {
+          var frames = det.querySelectorAll('iframe[data-src]');
+          for (var j = 0; j < frames.length; j++) {
+            frames[j].src = frames[j].getAttribute('data-src');
+            frames[j].removeAttribute('data-src');
+          }
+        }
+        if (det.open) {
+          loadFrames();
+        }
+        det.addEventListener('toggle', function () {
+          if (det.open) {
+            loadFrames();
+          }
+        });
+      })(accordions[i]);
+    }
+
     // City Tax Calculator (Homepage only)
     var sel = document.getElementById('citySelect');
     if (!sel) return;
