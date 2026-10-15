@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YS12X6Z52"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9YS12X6Z52');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Off The Rails | SPUR Report Technical Assessment | Fixes Before Funding</title>
+  <meta name="description" content="Read the executive summary and download 'Off The Rails': a technical assessment exposing the flaws, undisclosed conflicts and cherry-picked data behind SPUR's Bumper to Bumper transit report." />
+  <link rel="canonical" href="https://nonewtransittax.com/off-the-rails.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Fixes Before Funding" />
+  <meta property="og:title" content="Off The Rails | A Technical Assessment of SPUR's Bumper to Bumper Report" />
+  <meta property="og:description" content="Independent technical assessment reveals cherry-picked station closures, arbitrary mode-shift assumptions and undisclosed campaign ties behind SPUR's pro-tax traffic claims." />
+  <meta property="og:url" content="https://nonewtransittax.com/off-the-rails.html" />
+  <meta property="og:image" content="https://nonewtransittax.com/art/off-the-rails-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nonewtransittax.com/art/off-the-rails-cover.jpg" />
+  <meta name="twitter:title" content="Off The Rails | SPUR Report Technical Assessment" />
+  <meta name="twitter:description" content="Independent analysis exposes cherry-picked data, arbitrary assumptions and undisclosed conflicts in SPUR's Bumper to Bumper report promoting Measure RTM." />
+  <meta name="theme-color" content="#0f2740" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="NO RTM" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="brand-badge">FF</span>
+        <span class="brand-text">Fixes Before Funding<small>Stop the Bay Area Transit Sales Tax</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="primary-nav">
+        <a href="/#updates">Updates</a>
+        <a href="/#cost">Your Rate</a>
+        <a href="/regressive-tax.html">Who Pays Most</a>
+        <a href="/transit-failures.html">Transit's Record</a>
+        <a href="/salaries.html">Who Gets Paid</a>
+        <a href="/yes-funding.html">Who's Funding It</a>
+        <a href="/solutions/">Solutions</a>
+        <a href="/who-is-cabat.html">The Team</a>
+        <span class="nav-cta-group">
+          <a class="cta cta-outline" href="/#act">Take Action</a>
+          <a class="cta cta-donate" href="https://www.zeffy.com/en-US/donation-form/donate-to-the-committee-for-affordable-bay-area-transit" target="_blank" rel="noopener">Donate</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="promo-banner">
+      <span class="promo-title">Vote NO on Measure RTM</span>
+      <span class="promo-subtitle">Please Vote By November 3rd, 2026</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Technical Assessment • October 14, 2026</span>
+          <h1 style="margin-bottom: 0.4rem;">OFF THE RAILS</h1>
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-top: 0; margin-bottom: 0.6rem; font-family: 'Merriweather', Georgia, serif;">A Technical Assessment of SPUR's "Bumper to Bumper" Report</p>
+          <p style="font-size: 0.95rem; font-weight: 600; color: var(--teal); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.04em;">Committee for Affordable Bay Area Transit</p>
+          <p class="lead">In September 2026, SPUR and engineering contractor Jacobs released <em>Bumper to Bumper</em>, predicting traffic gridlock if voters reject Measure RTM ($1.2B/year) and San Francisco Prop H ($170M/year). This comprehensive technical evaluation reconstructs the underlying math using official October 2025 ridership data, revealing arbitrary assumptions, cherry-picked station lists, undisclosed campaign ties and viable alternatives that were never analyzed.</p>
+          
+          <!-- Top Download / Jump Button -->
+          <div class="hero-actions" style="align-items: center; gap: 0.85rem;">
+            <a class="button button-danger" href="#download" style="white-space: nowrap; font-size: 1.05rem; padding: 0.9rem 1.6rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;"><path d="M12 5v14"></path><polyline points="19 12 12 19 5 12"></polyline></svg>
+              <span>Jump to Download ↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Report Preview Visual -->
+        <div class="hero-figure">
+          <div class="report-hero-card">
+            <div class="report-hero-img-wrap">
+              <span class="report-hero-badge">20-Page Technical Report</span>
+              <img src="/art/off-the-rails-cover.jpg" alt="Cover of the Off the Rails report showing the historic 1972 Fremont BART derailment photo by R. Townley" width="1100" height="730" />
+            </div>
+            <div class="report-meta-grid">
+              <div class="report-meta-item">
+                <span>Release Date</span>
+                <strong>October 14, 2026</strong>
+              </div>
+              <div class="report-meta-item">
+                <span>Format</span>
+                <strong>PDF Document (852 KB)</strong>
+              </div>
+              <div class="report-meta-item">
+                <span>Scope of Review</span>
+                <strong>BART, Caltrain, Muni and AC Transit</strong>
+              </div>
+              <div class="report-meta-item">
+                <span>Data Sources</span>
+                <strong>BART, NTD, Caltrans PeMS and SFCTA</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expert Review Quote -->
+    <section style="padding: 1rem 0 2rem;">
+      <div class="container">
+        <div class="quote-box">
+          <blockquote>
+            "Overall, the SPUR analysis is an agenda-driven static analysis filled with advocacy and exaggerations. There are critical omissions – most notably a lack of sensitivity and alternatives analysis. It is unhelpful and misleading in predicting the impacts from the potential service cuts, and thus doesn't make a good case in favor of the transit tax. Rather, the conclusion was already known at the outset."
+          </blockquote>
+          <cite>— Professor Damian Park, Santa Clara University, Economics Dept. (Email, October 3, 2026)</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stat Callouts: By The Numbers -->
+    <section class="dark-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>By the Numbers: Auditing SPUR's Claims</h2>
+          <p>Key findings from the reconstruction of SPUR's calculations using official agency data.</p>
+        </div>
+        <div class="facts-grid">
+          <article class="fact-card">
+            <div class="fact-stat">+$1.2B</div>
+            <h3>More Expensive Than No Tax</h3>
+            <p>SPUR projected $174 million in annual driving expenses for shifted riders, but Measure RTM and SF Prop H extract roughly <strong>$1.37 billion per year</strong> in new taxes. Adopting the sales taxes costs Bay Area residents $1.2 billion more per year than not adopting them.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-stat">+159%</div>
+            <h3>Cost Per Passenger-Mile Surge</h3>
+            <p>Across seven major Bay Area transit agencies between 2019 and 2024, passenger-miles fell 51% while operating expenses rose 27%. Instead of rightsizing operations, the cost of carrying one rider one mile skyrocketed by 159%.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-stat">13.7%</div>
+            <h3>Ridership Cherry-Picking</h3>
+            <p>SPUR claimed to model the 15 lowest-ridership BART stations, but substituted busier stations like Dublin/Pleasanton and Millbrae, inflating weekday boardings by 13.7% and generating 25% to 35% more diverted car trips.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-stat">224 Mi</div>
+            <h3>Absurd Driving Distance Needed</h3>
+            <p>For the 8,905 daily trips from 15 BART station closures to reach SPUR's 498-million vehicle-miles claim, each diverted driver would have to commute 224 miles round trip every working day.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-stat">$122M</div>
+            <h3>Transit Contracts Held by Jacobs</h3>
+            <p>Jacobs Engineering, which performed the traffic analysis for SPUR, holds ~$122 million in Bay Area transit contracts and contributed $150,000 directly to the pro-tax campaign committee.</p>
+          </article>
+          <article class="fact-card">
+            <div class="fact-stat">$973M</div>
+            <h3>Unused Agency Reserves</h3>
+            <p>The San Mateo County Transportation Authority alone held $973 million in cash and investments as of August 2026. SPUR never evaluated using existing agency reserves or interagency loans before raising sales taxes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Findings Teaser -->
+    <section id="executive-summary">
+      <div class="container prose">
+        <span class="highlight-pill">Executive Summary Highlights</span>
+        <h2>Six Fatal Flaws in the "Bumper to Bumper" Report</h2>
+        <p>The 20-page technical paper dissects the methodology, data selections and political interests behind SPUR's claims. Here are the core findings documented in the report.</p>
+
+        <h3>1. Sponsoring the Tax While Forecasting the Crisis</h3>
+        <p>SPUR was not an independent, disinterested researcher evaluating public policy; it co-leads the Measure RTM political campaign. Report author Laura Tolkoff served as director and treasurer of the Connect Bay Area Transit Committee through April 2026. SPUR itself reported over $63,000 in in-kind campaign contributions.</p>
+        <p>Furthermore, technical consultant Jacobs contributed $150,000 directly to the campaign in three $50,000 installments in 2026. Jacobs holds approximately $122 million in authorized contracts and assigned work across BART, MTC, SFMTA, SamTrans, Golden Gate and Caltrain. Jacobs also recently entered into a $1 million settlement agreement with BART following an Inspector General investigation into Transbay Tube billing deficiencies. None of these financial relationships were disclosed in SPUR's report.</p>
+
+        <h3>2. Cherry-Picking Stations to Exaggerate Congestion</h3>
+        <p>SPUR stated that its analysis assumed "the lowest-ridership BART and Caltrain stations" would close, claiming this choice made its findings "intrinsically conservative."</p>
+        <p>BART's October 2025 ridership records prove otherwise. SPUR omitted four genuine lowest-ridership stations: Milpitas (1,453 boardings), Lafayette (1,860), Berryessa/North San Jose (1,940) and North Berkeley (2,037). In their place, SPUR included high-ridership stations: Dublin/Pleasanton (3,434 boardings), Pittsburg/Bay Point (2,594), Millbrae (2,164) and Antioch (2,041). This cherry-picking inflated ridership by 13.7% and produced 25% to 35% more diverted automobile trips.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption style="font-weight: 600;">Table 3 from Technical Report: The 15 lowest-ridership BART stations (October 2025) vs. SPUR's selection.</caption>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Station</th>
+                <th>Weekday Boardings</th>
+                <th>Included in SPUR's 15?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Oakland International Airport</td><td>558</td><td class="now">Yes</td></tr>
+              <tr><td>2</td><td>Pittsburg Center</td><td>581</td><td class="now">Yes</td></tr>
+              <tr><td>3</td><td>North Concord/Martinez</td><td>698</td><td class="now">Yes</td></tr>
+              <tr><td>4</td><td>Warm Springs/South Fremont</td><td>1,356</td><td class="now">Yes</td></tr>
+              <tr><td>5</td><td>Castro Valley</td><td>1,419</td><td class="now">Yes</td></tr>
+              <tr><td>6</td><td>West Dublin/Pleasanton</td><td>1,432</td><td class="now">Yes</td></tr>
+              <tr><td>7</td><td><strong>Milpitas</strong></td><td>1,453</td><td class="aft">NO (Skipped)</td></tr>
+              <tr><td>8</td><td>Orinda</td><td>1,478</td><td class="now">Yes</td></tr>
+              <tr><td>9</td><td>South San Francisco</td><td>1,596</td><td class="now">Yes</td></tr>
+              <tr><td>10</td><td>South Hayward</td><td>1,617</td><td class="now">Yes</td></tr>
+              <tr><td>11</td><td>San Bruno</td><td>1,724</td><td class="now">Yes</td></tr>
+              <tr><td>12</td><td>Colma</td><td>1,764</td><td class="now">Yes</td></tr>
+              <tr><td>13</td><td><strong>Lafayette</strong></td><td>1,860</td><td class="aft">NO (Skipped)</td></tr>
+              <tr><td>14</td><td><strong>Berryessa/North San Jose</strong></td><td>1,940</td><td class="aft">NO (Skipped)</td></tr>
+              <tr><td>15</td><td><strong>North Berkeley</strong></td><td>2,037</td><td class="aft">NO (Skipped)</td></tr>
+              <tr style="font-weight: 800; background: rgba(15,39,64,0.06);">
+                <td colspan="2">True Lowest 15 Total</td>
+                <td>21,513</td>
+                <td>—</td>
+              </tr>
+              <tr style="font-weight: 800; background: rgba(180,35,24,0.08);">
+                <td colspan="2">SPUR Selected 15 Total</td>
+                <td class="aft">24,456</td>
+                <td class="aft">+13.7% Higher</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3. Arbitrary Mode-Shift Assumptions</h3>
+        <p>The report claims that 56% of riders at an end-of-line closed station shift to driving, 30% shift at other closed stations and 25% shift at stations with reduced frequency. These percentages drive every downstream number in SPUR's congestion model, yet the report provides zero empirical data, calibration or sensitivity analysis to justify them.</p>
+
+        <h3>4. The Implausible 498-Million-Mile Projection</h3>
+        <p>SPUR claims service reductions would add 498 million vehicle-miles traveled (VMT) per year. But the 15 BART station closures generate only ~8,905 daily car trips, totaling about 33 million to 44 million VMT annually. Even accepting the 498-million figure at face value, total driving in the Measure RTM counties exceeds 135 million miles per day. SPUR's claimed traffic increase represents less than 1.4% of regional driving, an amount that is easily offset by modest increases in remote work.</p>
+
+        <h3>5. Bay Bridge Delays Cannot Be Audited</h3>
+        <p>SPUR's headline claim that morning Bay Bridge delays would increase by 33 minutes and evening delays by 43 minutes depends on unpublished hourly origin-destination matrices from Jacobs' subsidiary, StreetLight Data. Order-of-magnitude tests demonstrate that the result is borderline-plausible only under extreme assumptions and cannot be confirmed from public data.</p>
+
+        <h3>6. Viable Alternatives SPUR Ignored</h3>
+        <p>SPUR modeled the transit crisis as a binary choice: pass a $1.37 billion per year sales tax or face catastrophic highway gridlock. The report never analyzed obvious alternatives:</p>
+        <ul style="color: var(--text); padding-left: 1.2rem; margin-bottom: 1.4rem;">
+          <li style="margin-bottom: 0.5rem;"><strong>Bus Rapid Transit (BRT) and Express Buses:</strong> High-capacity point-to-point bus service that can carry proven passenger demand without heavy-rail overhead.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Utilizing Existing Reserves:</strong> Regional agencies hold hundreds of millions in reserves (including $973 million in San Mateo County) that could fund transitional restructuring.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Adaptive Commuter Behavior:</strong> Lessons from the 2013 BART strike demonstrate that commuters shift schedules, carpool and work from home, avoiding the paralysis predicted by static models.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Labor and Overhead Restructuring:</strong> Aligning operational staffing and compensation with post-pandemic ridership realities rather than preserving peak-era budget baselines.</li>
+        </ul>
+
+        <!-- BART Presentation Slide -->
+        <div class="slide-figure">
+          <img src="/art/bart-cuts-slide.jpg" alt="Official BART board presentation slide stating: Service cuts won't solve BART's budget shortfall" width="1623" height="966" />
+          <div class="slide-caption">
+            <strong>Figure 1 from Technical Report:</strong> Official BART presentation slide (Agenda Item 4.A, slide 14, Contra Costa Transportation Authority meeting, Sept. 16, 2026). BART admits that rail operating costs do not scale down with service cuts, demonstrating that agency-supplied cut scenarios are political threats rather than balanced operational solutions.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Download CTA -->
+    <section id="download" style="padding-top: 0;">
+      <div class="container">
+        <div class="download-card">
+          <span class="highlight-pill" style="margin-bottom: 0.75rem;">Full Research Report</span>
+          <h3>Download the Complete 20-Page Technical Assessment</h3>
+          <p>Get the complete methodology breakdown, station-by-station reconstruction tables, sensitivity analyses and extensive primary source citations.</p>
+          <a class="download-btn-2tier" href="/art/Off_the_Rails_Report.pdf" download="Off_the_Rails_Report.pdf" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span class="btn-tier-text">
+              <span class="btn-tier-main">Download Full Report</span>
+              <span class="btn-tier-sub">20-Page PDF • 852 KB</span>
+            </span>
+          </a>
+          <div class="download-meta-note">
+            Published by the Committee for Affordable Bay Area Transit • October 14, 2026 • Companion datasets available upon request.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate CTA Section (Placed After Download Button) -->
+    <section id="donate" style="padding-top: 0; padding-bottom: 3.5rem;">
+      <div class="container">
+        <div class="callout" style="padding: 2.2rem 2rem; border-left: 6px solid var(--teal); background: linear-gradient(145deg, rgba(14,138,107,0.12), rgba(30,95,143,0.08)); border-radius: 20px;">
+          <div style="max-width: 44rem; margin: 0 auto; text-align: center;">
+            <span class="eyebrow" style="margin-bottom: 0.8rem;">Support the Campaign</span>
+            <h2 style="font-family: 'Merriweather', Georgia, serif; font-size: clamp(1.8rem, 3.2vw, 2.3rem); color: var(--navy); margin: 0.4rem 0 0.8rem; line-height: 1.2;">Help Us Share This Research</h2>
+            <p style="font-size: 1.08rem; color: var(--text); line-height: 1.6; margin-bottom: 1.6rem;">
+              The pro-tax campaign is backed by transit contractors and special interests. Our opposition effort is powered by grassroots contributions to inform voters across Alameda, Contra Costa, San Francisco, San Mateo and Santa Clara counties.
+            </p>
+            <div>
+              <a class="button button-secondary" href="https://www.zeffy.com/en-US/donation-form/donate-to-the-committee-for-affordable-bay-area-transit" target="_blank" rel="noopener" style="background: linear-gradient(135deg, #0e8a6b, #0b6e55); color: #fff; font-size: 1.12rem; padding: 0.95rem 2.2rem; box-shadow: 0 12px 28px rgba(14,138,107,0.35); text-decoration: none;">
+                Donate to the Campaign
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+  <script src="/site.js" defer></script>
+</body>
+</html>
